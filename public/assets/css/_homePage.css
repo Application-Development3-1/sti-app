@@ -1,0 +1,190 @@
+.bodycolor{
+    background-color: #F6F6EF;
+  }
+  
+  .STIlogo{
+    background-image: url(sti.jpg);
+    width: 100px;
+    height: 61px;
+    top: 0%;
+    left: 0%;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+  }
+  
+  #box{
+    
+    width: 275px;
+    height: 100px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-left: 60px;
+  }
+  
+  
+  #text_style{
+    color: #11110e;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-left: 130px;
+  }
+  
+  #postbox{
+    width: 730px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 70px;
+    margin-right: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 2px 1px 0 #e3e3d7;
+  }
+  
+  .bulletin{
+    width: 290px;
+    background-color: #FFD21D;
+    height: 260px;
+    margin-left: 50px;
+    margin-top: 280px;
+  }
+  
+  #blue{
+    width: 290px;
+    height: 45px;
+    background-color: #008FEF;
+  }
+  
+  #yellow{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 248px;
+    height: 175px;
+    background-color: #F6F6EF;
+  }
+  
+  #text_members{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 2;
+    color: #11110e;
+  
+    margin-bottom: 20px;
+  }
+  
+  #member_post{
+    height: 550px;
+    width: 730px;
+    margin-top: 10px;
+    margin-left: 380px;
+    border-radius: 20px;
+    background-color : #1e87d6;
+  
+    box-shadow: 0 3px 1px 0 #e3e3d7;
+  }
+  
+  #caption{
+    color:#ffffff ;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+  
+  #add_post{
+    background-color: #F6F6EF;
+    width: 510px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 90px;
+    border-radius: 20px;
+    border: transparent;
+    padding-left: 20px;
+  }
+  
+  #post_content{
+    background-color:#cdcdbe ;
+    height: 415px;
+    width: 675px;
+    margin-left: 15px;
+    margin-top : 10px;
+    border-radius: 20px;
+  }
+  
+  #image_content{
+    background-image: url(pics/nj.jpg);
+    height: 415px;
+    width: 550px;
+  
+    margin-left: 60px;
+    border-radius: 20px;
+  }
+  
+  
+  #calendar{
+    width: 230px;
+    height: 60px;
+  
+    margin-top: 60px;
+    margin-left: 0px;
+    border-radius: 10px;
+    background-color: #008FEF;
+    border: none;
+  
+    color: #F6F6EF;
+    font-weight: bold;
+  }
+  
+  #lost_found{
+    width: 230px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 11px;
+    margin-left: 10px;
+   
+    background-color: #008FEF;
+    border: none;
+    color: #F6F6EF;
+    font-weight: bold;
+  }
+  
+  #rowlength{
+    width: 100%;
+  }
+  
+  #post_text{
+    font-weight: bold; 
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 80px;
+    margin-top: 30px;
+  }
+  
+  #course_post{
+    color: #ffffff;
+    margin-left: 80px;
+    margin-top: 0px;
+  }
+  
+  #left_text_style{
+    font-weight: bold; 
+    color: #717273
+  }
+  #left_text_style li{
+    margin-left: 40px;
+    margin-top: 10px;
+    list-style: none;
+  }
+  
+  #prof{
+    position: absolute; 
+    margin-left: 0px;
+     
+  }
+  
+  li ul a{
+    text-decoration: none;
+  }
+  
+  li ul a:visited{
+    color: #717273;
+  }

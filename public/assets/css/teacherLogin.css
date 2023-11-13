@@ -1,0 +1,100 @@
+.nav_logo a{
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin-left: 5px;
+    height: 75px;
+}
+
+.big_logo {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 100px 0px 0px 30px;
+    filter: drop-shadow(5px 3px 2px #0000007e);
+}
+
+h2 {
+    color: rgb(112, 112, 112);
+    text-align: left;
+    margin-left: 59%;
+    padding-top: 50px;
+    font-size: 35px;
+}
+
+.center{
+    overflow: hidden;
+    position: absolute;
+    box-sizing: border-box;
+    border: solid 3px rgb(143, 140, 140);
+    width: 555px;
+    height: 420px;
+    border-radius: 5%;
+    margin: 50px 50%;
+    padding: 35px 30px 25px 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-group {
+    position: relative;
+    margin: 10px 0;
+    padding-left: 40px;
+    
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+    color: rgb(78, 75, 75);
+    padding: 0 5px;
+    transition: .5s;
+}
+
+.input-group input {
+    height: 60px;
+    width: 400px;
+    font-size: 17px;   
+    color: rgb(78, 75, 75);
+    padding: 0 10px;
+    border: 2px solid rgb(198, 198, 198) ;
+    border-radius: 20px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top: 0;
+    font-size: 15px;
+    background-color: #fff;
+}
+.buttons {
+    margin-top: 0 0;
+}
+
+.fa {
+    color: #025BAB;
+    margin-left: 50px;
+    display: flex;
+    padding-top: 17px;
+    height: 75px;
+    right: 17px;
+    position: fixed;
+    font-size: 35px;
+    transition: 0.3s;
+    filter: drop-shadow(5px 3px 2px #00000055);
+}
+
+.fa:hover {
+    font-size: 40px;
+}
+
+.fa a:visited{
+    background-color: #025BAB;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
