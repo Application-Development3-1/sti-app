@@ -15,6 +15,7 @@ function signupSubmitListener()
         let last_name = teacherSignUp.querySelector('input[name=last_name]').value;
         let middle_name = teacherSignUp.querySelector('input[name=middle_name]').value;
         let contact_number = teacherSignUp.querySelector('input[name=contact]').value;
+        let email = teacherSignUp.querySelector('input[name=email]').value;
         
         let password = teacherSignUp.querySelector('input[name=password]').value;
     
@@ -28,7 +29,7 @@ function signupSubmitListener()
                     last_name: last_name,
                     middle_name: middle_name,
                     contact_number: contact_number,
-                    email: 'abc@gmail.com',
+                    email: email,
                     password: password
     
                 }),

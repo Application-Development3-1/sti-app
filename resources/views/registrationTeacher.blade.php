@@ -59,23 +59,26 @@
                     </div>
 
                     <div class="input-group">
+                      <input name= "email" type="text" id="teacher_email" class="TeacherEmailInput" required>
+                      <label class="labellineEmail">Email</label>
+                    </div> 
+
+                    <div class="input-group">
                         <input name="password" type="password" id ="teacher_createPassword" class="TeacherPasswordInput" required> 
                         <label class="labellinePassWord">Create Password</label> 
                     </div>
 
+                    <div>
+                                        <!--Note for fill up-->
+                    <h1 class="note-red">*Fill in required Information</h1>
+                    </div>
+
                     <div class="input-group">
-                      <input type="password" id="teacher_re-enterPassword" class="TeacherPasswordInput" required>
+                      <input name= "rePassword" type="password" id="teacher_re-enterPassword" class="TeacherPasswordInput" required>
                       <label class="labellineRePassWord">Re-Enter Password</label>
-                  </div> 
-
-                        
-                   
+                      <p id = "teacher_message"></p> 
+                    </div> 
                 </div>
-
-                <p id = "teacher_message"></p> 
-
-                <!--Note for fill up-->
-                <h1 class="note-red">*Fill in required Information</h1>
 
                 <!--sign up button-->
                 <button class="signupAd" id= "TeacherSubmitButton" disabled>Sign Up</button>
