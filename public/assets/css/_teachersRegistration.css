@@ -135,6 +135,19 @@ form .user-details .input-group {
     font-weight: bold;
  }
 
+ .labellineEmail{
+    position: absolute;
+    top:10%;
+    left:7%;
+    transform: translateY(1400%);
+    font-size: 18px;
+    pointer-events: none;
+    color: rgb(78, 75, 75);
+    padding: 0 5px;
+    transition: .2s;
+    font-weight: bold;
+  }
+
  .labellinePassWord{
     position: absolute;
     top:10%;
@@ -148,7 +161,7 @@ form .user-details .input-group {
     font-weight: bold;
  }
 
- .labellineRePassWord{
+  .labellineRePassWord{
     position: absolute;
     top:10%;
     left:55%;
@@ -299,4 +312,5 @@ p{
     font-size: 14px;
     display: inline-block;
     padding: 5px 20px ;
+    bottom: 50%;
   }

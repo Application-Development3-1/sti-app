@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\v2\TeachersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,3 +22,5 @@ Route::post('v1/users', [UsersController::class, 'store']);
 
 Route::get('v2/teachers', [TeachersController::class, 'index']);
 Route::post('v2/teachers', [TeachersController::class, 'store']);
+
+

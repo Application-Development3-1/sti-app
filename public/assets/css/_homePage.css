@@ -3,7 +3,7 @@
   }
   
   .STIlogo{
-    background-image: url(sti.jpg);
+    background-image: url('sti.jpg');
     width: 100px;
     height: 61px;
     top: 0%;
@@ -104,17 +104,16 @@
   #post_content{
     background-color:#cdcdbe ;
     height: 415px;
-    width: 675px;
+    width: 680px;
     margin-left: 15px;
     margin-top : 10px;
     border-radius: 20px;
   }
   
-  #image_content{
-    background-image: url(pics/nj.jpg);
+  #image_container{
     height: 415px;
     width: 550px;
-  
+    background-position: center;
     margin-left: 60px;
     border-radius: 20px;
   }
@@ -181,10 +180,14 @@
      
   }
   
-  li ul a{
+  ul li a{
+    
     text-decoration: none;
   }
   
-  li ul a:visited{
+  ul li a:visited{
     color: #717273;
   }
+
+
+

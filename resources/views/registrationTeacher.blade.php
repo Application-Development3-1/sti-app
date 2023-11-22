@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/_teachersRegistration.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <title>Sign Up</title>
+    
 </head>
 <body>
     <div class="bg-color"></div>
@@ -59,23 +60,26 @@
                     </div>
 
                     <div class="input-group">
+                      <input name= "email" type="text" id="teacher_email" class="TeacherEmailInput" required>
+                      <label class="labellineEmail">Email</label>
+                    </div> 
+
+                    <div class="input-group">
                         <input name="password" type="password" id ="teacher_createPassword" class="TeacherPasswordInput" required> 
                         <label class="labellinePassWord">Create Password</label> 
                     </div>
 
+                    <div>
+                                        <!--Note for fill up-->
+                    <h1 class="note-red">*Fill in required Information</h1>
+                    </div>
+
                     <div class="input-group">
-                      <input type="password" id="teacher_re-enterPassword" class="TeacherPasswordInput" required>
+                      <input name= "rePassword" type="password" id="teacher_re-enterPassword" class="TeacherPasswordInput" required>
                       <label class="labellineRePassWord">Re-Enter Password</label>
-                  </div> 
-
-                        
-                   
+                      <p id = "teacher_message"></p> 
+                    </div> 
                 </div>
-
-                <p id = "teacher_message"></p> 
-
-                <!--Note for fill up-->
-                <h1 class="note-red">*Fill in required Information</h1>
 
                 <!--sign up button-->
                 <button class="signupAd" id= "TeacherSubmitButton" disabled>Sign Up</button>

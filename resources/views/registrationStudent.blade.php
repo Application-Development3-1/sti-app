@@ -80,7 +80,7 @@
                 
                 <h1 class="note-red">*Fill in required Information</h1>
 
-                <button class="signupStud" id="StudSubmitButton" disabled> Sign Up</button>
+                <button class="signupStud" id="TeacherSubmitButton" disabled> Sign Up</button>
             </form>
         </div>
     </div>
@@ -95,7 +95,7 @@
 
     </div>
 
-    <script src="{{asset('assets/js/_studentRegistration.js') }}"></script>
+    <script src="{{asset('assets/js/_studentsRegistration.js') }}"></script>
     <script src="/assets/js/storeData.js"></script>
    
 
