@@ -1,9 +1,9 @@
-
-let password = document.querySelector('#teacher_createPassword');
-let rePassword = document.querySelector('#teacher_re-enterPassword');
+let password = document.querySelector('#createPassword');
+let rePassword = document.querySelector('#re-enterStudentPassword');
 let message = document.querySelector('p');
 
 let btn = document.getElementById("TeacherSubmitButton");
+
 
 function checkPassword(){
  

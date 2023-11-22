@@ -137,8 +137,8 @@ form .user-details .input-group {
 
  .labellineEmail{
     position: absolute;
-    top:30%;
-    right:55%;
+    top:10%;
+    left:7%;
     transform: translateY(1400%);
     font-size: 18px;
     pointer-events: none;

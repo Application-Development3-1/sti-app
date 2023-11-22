@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 function signupSubmitListener()
 {
     let signupForm = document.querySelector('#formReg');
-    document.querySelector('#StudSubmitButton').addEventListener('click', async (e) => {
+    document.querySelector('#TeacherSubmitButton').addEventListener('click', async (e) => {
         e.preventDefault()
         /*assign ng variable na maglalaman ng input names sa html */
         let studentID = signupForm.querySelector('input[name=studentNum]').value;

@@ -1,0 +1,168 @@
+.Adminbody{
+ 
+    background-color: #F6F6EF;
+    width: auto;
+          
+    }
+    
+    #admin_text{
+        
+        color: #025bab; 
+        font-size: 40px; 
+        font-weight: bold;
+        margin-left: 100px; 
+        margin-top: 50px; 
+        position: absolute; 
+        transform: translate(-50%, -50%);
+      }
+    
+      #admin_icon_home_container{
+        
+        position: absolute; 
+        margin-left:  98%; 
+        margin-top: 45px; 
+        transform: translate(-50%, -50%);
+    }
+    
+    
+    #admin_icon_home_style{
+        
+        color: #008FEF; 
+        font-size: 36px;
+    }
+    
+    #admin_text_2{
+        margin-top: 130px;
+        width: 50%;
+    }
+    
+    #admin_text_acc{
+    
+        color: #696969 ; 
+        font-size: 40px; 
+        font-weight: bold;
+        margin-left: 100px; 
+        margin-top: 20px; 
+        margin-bottom: 15px;
+        
+    
+    }
+    #table-container{
+     overflow: scroll;
+     height: 600px;
+     width:  1880px;
+     background-color: #D9D9D9;
+     margin-left: 20px;
+     position: absolute;
+     
+    }
+    
+    #dynamic_id_list{
+        width: 1860px;
+       
+        
+    }
+    #dynamic_id_list td{
+    
+        font-size: 32px;
+        color: #025bab; 
+        font-weight: bold;
+         text-align: center;
+         padding: 8px;
+         background-color: white;
+    }
+    #remove_row_color{
+        color: white;
+       
+    }
+    #disable_row_color{
+        color: white;
+        
+    }
+    #dynamic_id_list th{
+        font-size: 32px;
+        color: #025bab; 
+        font-weight: bold;
+         text-align: center;
+         padding: 8px;
+         background-color: #FFD21D;
+    }
+    
+    #buttons_admin{
+        background-color: #ECF1F4;
+        width: 150px;
+       
+        
+    }
+    #buttons_admin2{
+        background-color: #ECF1F4;
+        width: 150px;
+       
+        
+    }
+    #delete_button{
+        border: none;
+        padding: 8px 22px;
+        background: none;
+        font-size: 24px;
+        color: #025bab; 
+        font-weight: bold;
+        border-radius: 6px;
+        background-color: #FFD21D;
+        transition: all 0.2s ease;
+    }
+    #delete_button:active{
+        transform: scale(0.96);
+    }
+    
+    #disable_button{
+        border: none;
+        padding: 8px 22px;
+        background: none;
+        font-size: 24px;
+        color: #025bab; 
+        font-weight: bold;
+        border-radius: 6px;
+        background-color: #FFD21D;
+        transition: all 0.2s ease;
+    }
+    #disable_button:active{
+        transform:scale(0.96)
+    }
+    #add_button_container{
+        margin-top: 20px;
+        margin-left: 1750px;
+        position: absolute;
+        bottom: 35%;
+    }
+    #add_button_style{
+        background-color:  #008FEF;
+        border: none;
+        width: 150px;
+        height: 55px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        border-radius: 17%;
+        transition: all 0.2s ease;
+        
+    }
+    #add_button_style:active{
+        transform: scale(0.96);
+    }
+    
+    #icon_plus_circle_fill_style{
+        color: white; 
+        font-size: 25px; 
+        margin-left: 10px;
+    
+    }
+    #adminForm{
+        position: relative;
+        left: 5%;
+        top: 18%;
+        box-sizing: border-box;
+
+    }
+   
+      

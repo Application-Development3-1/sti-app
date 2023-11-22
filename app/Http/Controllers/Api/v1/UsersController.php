@@ -8,6 +8,10 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
+use Session;
+use validator;
 
 use function Laravel\Prompts\alert;
 
@@ -53,4 +57,12 @@ class UsersController extends Controller
             'users' => $user
         ]);
     }
+
+    public function records(){
+      $users = User::all();
+      
+      return view('admin', compact('users'));
+    }
+
+   
 }
