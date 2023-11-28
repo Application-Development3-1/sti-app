@@ -29,6 +29,7 @@
     border-radius: 20px;
     box-shadow: 2px 2px 2px 2px #e3e3d7;
     
+    
   }
   
   /* When the inputs get focus, do something */
@@ -102,9 +103,15 @@
     margin-left: 10px;
   }
 
+  .adminEmail{
+    width: 500px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
 .Admin{
     border-radius: 5px;
-    margin: 10px;
+    margin: 1px;
     
     display: inline-flex;
     justify-content: center;

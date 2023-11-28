@@ -9,11 +9,11 @@ function postSubmitListener()
     document.querySelector('#Posting').addEventListener('click', async (e) =>{
         e.preventDefault();
     
-        let captionStudent = studentPost.querySelector('input[name=post]');
+        let captionStudent = studentPost.querySelector('input[name=post1]');
         let imageStudent = studentPost.querySelector('input[name=file]');
 
         if (captionStudent || imageStudent){
-            let response = await fetch ('/api/v3/post', {
+            let response = await fetch ('/api/v3/feed', {
                 method: 'post', 
                 body: JSON.stringify({
                     caption: captionStudent,

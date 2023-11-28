@@ -3,13 +3,13 @@ const btn = document.getElementById('Posting');
 btn.addEventListener("click", postingFunction)
 
 const PostCaption = document.getElementById('caption');
-const Caption = document.getElementById('add_post');
+const Caption = document.getElementById('add_post1');
 
 function postingFunction(){
 
     PostCaption.innerHTML= Caption.value;
 
-    let imagefile = document.getElementById('img_file');
+    let imagefile = document.getElementById('file');
     var uploaded_image = "";
 
     imagefile.addEventListener("change", function(){
