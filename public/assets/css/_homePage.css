@@ -52,7 +52,7 @@
   #blue{
     width: 290px;
     height: 45px;
-    background-color: #008FEF;
+    background-color: #014887;
   }
   
   #yellow{
@@ -73,12 +73,13 @@
   }
   
   #member_post{
-    height: 550px;
+    height: 700px;
     width: 730px;
     margin-top: 10px;
     margin-left: 380px;
-    border-radius: 20px;
-    background-color : #1e87d6;
+    border-radius: 20px; 
+    background-color : #014887;
+
   
     box-shadow: 0 3px 1px 0 #e3e3d7;
   }
@@ -95,7 +96,7 @@
     width: 510px;
     height: 55px;
     margin-top: 20px;
-    margin-left: 90px;
+    margin-left: 95px;
     border-radius: 20px;
     border: transparent;
     padding-left: 20px;
@@ -103,19 +104,20 @@
   
   #post_content{
     background-color:#cdcdbe ;
-    height: 415px;
-    width: 680px;
-    margin-left: 15px;
+    height: 530px;
+    width: 690px;
+    margin-left: 10px;
     margin-top : 10px;
     border-radius: 20px;
+    
   }
   
   #image_container{
-    height: 415px;
-    width: 550px;
+    height: 100%;
+    width: 100%;
     background-position: center;
-    margin-left: 60px;
     border-radius: 20px;
+    display: flex;
   }
   
   
@@ -126,7 +128,7 @@
     margin-top: 60px;
     margin-left: 0px;
     border-radius: 10px;
-    background-color: #008FEF;
+    background-color: #014887;
     border: none;
   
     color: #F6F6EF;
@@ -140,7 +142,7 @@
     margin-top: 11px;
     margin-left: 10px;
    
-    background-color: #008FEF;
+    background-color: #014887;
     border: none;
     color: #F6F6EF;
     font-weight: bold;
@@ -166,7 +168,7 @@
   
   #left_text_style{
     font-weight: bold; 
-    color: #717273
+    color: #014887
   }
   #left_text_style li{
     margin-left: 40px;
@@ -186,7 +188,26 @@
   }
   
   ul li a:visited{
-    color: #717273;
+    color: #014887;
+  }
+
+  .like_comment button{
+    margin-top: 5px;
+    border: none;
+    background-color: #1e87d6 ;
+    color: #F6F6EF;
+  }
+
+  .like_comment:hover{
+    opacity: 10;
+  }
+
+  .far{
+    color: white;
+  }
+  
+  .fas{
+    color: red;
   }
 
 

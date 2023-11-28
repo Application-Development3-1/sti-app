@@ -23,7 +23,7 @@ class StorePostRequest extends FormRequest
     {
         return [
             'caption' => 'max:500|unique:student_posts',
-            'image' => ''
+            'image' => 'max:500'
         ];
     }
 }

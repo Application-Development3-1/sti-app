@@ -24,3 +24,7 @@ Route::get('v2/teachers', [TeachersController::class, 'index']);
 Route::post('v2/teachers', [TeachersController::class, 'store']);
 
 
+   
+   
+
+

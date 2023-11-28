@@ -10,8 +10,14 @@ use App\Http\Controllers\HomeTestController;
 use App\Http\Controllers\AuthControllerTeacher;
 use App\Http\Controllers\HomeTestControllerTeacher;
 use App\Http\Controllers\Api\v3\PostController;
-use App\Models\StudentPost;
+use App\Http\Controllers\FeedController;
+use App\Http\Controllers\SampleFeedController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Models\Feed;
+use App\Models\User;
 use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,16 +86,33 @@ Route::post('add', [UsersController::class, 'store']);*/
 
     
     Route::post('/studentHomePage', function(){
-        $studentposts = new StudentPost();
-        $studentposts->image = request('image');
-        $studentposts->caption = request('caption');
+        $feeds = new Feed();
+        $feeds->image = request('image');
+        $feeds->caption = request('caption');
     });
 
-/*
+    /*Route::get("students", [FeedController::class, 'studentHomePage']);*/
 
-    Route::get('/studentHomePage', [StudentpostController::class, 'create'])->name('studentHomePage.create');*/
-    
-    Route::post('/studentHomePage', [PostController::class, 'store'])->name('studentHomePage.store');
+    Route::get('admin', [UsersController::class, 'records']);
 
-   Route::get('admin', [UsersController::class, 'records']);
+    Route::view('studentHomePage', 'studentHomePage');
+    Route::POST('studentHomePage', [FeedController::class, 'studentHomePage']);
 
+    Route::get('/studentHomePage', function(){
+        $feedpost = DB::table('feedpost')->get();
+        
+        return view ('studentHomePage');
+    });
+
+
+    Route::get('/click_delete/{id}', [UsersController::class, 'deleteStudent']);
+
+    Route::post('/click_create/{id}', [UsersController::class, 'storeAdmin']);
+
+    Route::post('homeStudent', [FeedController::class, 'store']);
+   
+    Route::resource('/studentHomePage', FeedController::class);
+
+    Route::get('/profilePage', function(){
+        return view ('studentProfile');
+    });

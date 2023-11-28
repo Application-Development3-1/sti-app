@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StudentPost extends Model
+class Feed extends Model
 {
     use HasFactory;
 
+    public $table = 'feedpost';
     protected $fillable = [
-        'caption',
-        'image'
-        
+        'image',
+        'caption'
     ];
 }

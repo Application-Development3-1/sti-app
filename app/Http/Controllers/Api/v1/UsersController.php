@@ -7,7 +7,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Session;
@@ -62,6 +62,31 @@ class UsersController extends Controller
       $users = User::all();
       
       return view('admin', compact('users'));
+    }
+
+    public function deleteStudent($id){
+        DB::delete('delete from users where id = ?', [$id]);
+        return redirect('admin')->with('success', 'Data Deleted');
+
+    }
+
+    public function storeAdmin(Request $request){
+        
+       $user = User::create([
+        'studentID'=>$request->studentID,
+        'first_name'=>$request->FirstName,
+        'last_name'=>$request->LastName,
+        'middle_name'=>$request->MiddleName,
+        'course'=>$request->Course,
+        'email'=>$request->Email,
+        'password'=>$request->Password,
+
+       ]);
+    
+       if(!$user){
+        return redirect('admin')->with('error', 'unsuccessful');
+       }
+       return redirect('admin')->with('success', 'Data Succesfully Created');
     }
 
    
