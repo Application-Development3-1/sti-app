@@ -69,6 +69,7 @@
           @csrf
           <h1>Add Post</h1>
 
+          <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
           <input type="text" name="caption"id="add_post1" placeholder= "Write Something....">
           <input type="file" name="image" class="imageSelector" id="file" accept="image/jpeg, image/png, image/jpg">
 

@@ -14,21 +14,11 @@ use PhpParser\Node\Expr\FuncCall;
 
 
 class PostController extends Controller{
-    /*public function AddSample(Request $request){
-        $feed = new Feed();
-        $feed->caption = $request->caption;
-        $feed->image = $request->image;
-        $feed->save();
-        return redirect('add');
 
-    }
-*/
     public $num;
 
     public function studentHomePage(Request $request){
-        $request->validate([
-            'image'=> 'image|mimes:jpeg,jpg,png|max:5120'
-        ]);
+       
         
         foreach($request->image as $value){
             $imageName = time().'_'.$value->getClientOriginalName();
@@ -38,12 +28,12 @@ class PostController extends Controller{
             $imageName[] = $imageName;
         }
         
+        
         $post = new Post();
 
         $post->caption = $request->caption;
         $post->image = $request->image;
-           
-
+      
         $post->save();
 
         $images[] = $post;
@@ -63,31 +53,45 @@ class PostController extends Controller{
        /* $feedpost = Feed::where('id', $idmax)->get();*/
         
         
-       return view('studentHomePage', ['post'=>$reverse]);
+       return view('studentHomePage', ['post'=>$reverse], compact('idarray'));
    
     }
 
     public function store(Request $request){
+        $request->validate([
+            'image'=> 'image|mimes:jpeg,jpg,png|max:5120',
+            
+        ]);
 
+         
         $requestData = $request->all();
         
 
         $fileName = time().$request->file('image')->getClientOriginalName();
 
         $path =$request->file('image')->storeAs('public/images/', $fileName, 'public');
+        $userId= $request->input('user_id');
 
         $requestData["image"] = '/storage/'.$path;
 
         
-        Post::create([
-            $requestData,
-            'user_id'=>Auth::user()->id,
-            'caption' => $request->input('caption'),
-         
+        Post::create($requestData, $userId);
 
-
-        ]);
         
+       /* $fileName = $request->file("image")->getClientOriginalName();
+        $userId = Auth::user()->id;
+        $caption = $request->input('caption');
+
+        $request->file('image')->storeAs('public/images', $fileName);
+        $post = new Post();
+
+        $post->image = $fileName;
+        $post->caption = $caption;
+        $post->user_id = $userId;
+       
+
+        $post->save();*/
+         
 
         return redirect('studentHomePage')->with('message','Post Success!');
     }
