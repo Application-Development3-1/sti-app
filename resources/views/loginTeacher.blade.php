@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Registration</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/teacherLogin.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/teacherlogin.css">
     <link rel="stylesheet" type="text/css" href="assets/css/_general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="shortcut icon" type="x-icon" href="images/tablogo.png">
@@ -26,15 +26,11 @@
     </div>
     <!-- logo na malaki-->
     <div class="big_logo"><img id="logo_pic" src="images/stilogo.png" alt="logo"></div>
-
-    
-    
     
 
-    <!--Form input of student-->
-    <div class="row justify-content-center mt-5" style="margin-left:505px;">
-        <div class="col-lg-4">
-            <div class="card">
+    <!--Form input of teacher-->
+    <div class="row justify-content-center mt-5">
+            <div class="card" id="card">
                 <div class="card-header">
                     <h1 class="card-title">Teacher Login</h1>
                 </div>
@@ -47,25 +43,24 @@
                     <form action="{{ route('login2') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="email2" class="form-label">Email</label>
-                            <input type="email" name="email2" class="form-control" id="email2" required>
+                            <input type="text" name="email2" class="form__field" id="email2" required>
+                            <label for="email2" class="form__label">Email</label>
                         </div>
                         <div class="mb-3">
-                            <label for="password2" class="form-label">Password</label>
-                            <input type="password" name="password2" class="form-control" id="password2" required>
+                            <input type="password" name="password2" class="form__field__Pass" id="password2" required>
+                            <label for="password2" class="form__label__Pass">Password</label>
                         </div>
                         <div class="mb-3">
                             <div class="d-grid">
-                                <button class="btn btn-primary">Login</button>
+                                <button class="btn btn-primary" id="btn__login">Login</button>
                             </div>
                             <div class="d-grid" style="margin-top: 10px;">
-                                <button class="btn btn-primary"><a href="/registrationTeacher" style="color:white;">Register</a></button>
+                                <button class="btn btn-primary" id="btn__Register"><a href="/registrationTeacher" class="letter">Register</a></button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 
 </body>

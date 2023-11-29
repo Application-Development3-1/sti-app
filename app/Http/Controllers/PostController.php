@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Feed;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -12,8 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use PhpParser\Node\Expr\FuncCall;
 
-/*
-class FeedController extends Controller{
+
+class PostController extends Controller{
     /*public function AddSample(Request $request){
         $feed = new Feed();
         $feed->caption = $request->caption;
@@ -23,7 +23,6 @@ class FeedController extends Controller{
 
     }
 */
-/*
     public $num;
 
     public function studentHomePage(Request $request){
@@ -39,38 +38,39 @@ class FeedController extends Controller{
             $imageName[] = $imageName;
         }
         
-        $feed = new Feed();
+        $post = new Post();
 
-        $feed->caption = $request->caption;
-        $feed->image = $request->image;
-        
+        $post->caption = $request->caption;
+        $post->image = $request->image;
+           
 
-        $feed->save();
+        $post->save();
 
-        $images[] = $feed;
+        $images[] = $post;
         /*return redirect('studentHomePage');*/
-/*
+
     }
 
     public function index(){
 
-        $idarray = Feed::all()->modelKeys();
+        $idarray = Post::all()->modelKeys();
         $idmax= end($idarray);
-        $feedpost = Feed::all();
-        $reverse= $feedpost->reverse();
+        $post = Post::all();
+        $reverse= $post->reverse();
         $reverse->all();
         
 
        /* $feedpost = Feed::where('id', $idmax)->get();*/
         
-     /*   
-       return view('studentHomePage', ['feedpost'=>$reverse]);
+        
+       return view('studentHomePage', ['post'=>$reverse]);
    
     }
 
     public function store(Request $request){
 
         $requestData = $request->all();
+        
 
         $fileName = time().$request->file('image')->getClientOriginalName();
 
@@ -78,10 +78,20 @@ class FeedController extends Controller{
 
         $requestData["image"] = '/storage/'.$path;
 
-        Feed::create($requestData);
+        
+        Post::create([
+            $requestData,
+            'user_id'=>Auth::user()->id,
+            'caption' => $request->input('caption'),
+         
+
+
+        ]);
+        
 
         return redirect('studentHomePage')->with('message','Post Success!');
     }
+    
 }
 
 

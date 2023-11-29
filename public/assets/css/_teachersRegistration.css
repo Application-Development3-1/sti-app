@@ -151,7 +151,7 @@ form .user-details .input-group {
  .labellinePassWord{
     position: absolute;
     top:10%;
-    left:45px;
+    left:55%;
     transform: translateY(1400%);
     font-size: 18px;
     pointer-events: none;
@@ -163,9 +163,9 @@ form .user-details .input-group {
 
   .labellineRePassWord{
     position: absolute;
-    top:10%;
-    left:55%;
-    transform: translateY(1400%);
+    top: 7%;
+    left: 55%;
+    transform: translateY(1875%);
     font-size: 18px;
     pointer-events: none;
     color: rgb(78, 75, 75);
