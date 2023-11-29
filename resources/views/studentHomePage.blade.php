@@ -21,7 +21,7 @@
       </div>
 
       <div class ="col">
-      <i class="fa-solid fa-house" style="color: #014887; font-size: 36px; position: absolute; margin-left: 45%; margin-top: 35px; transform: translate(-50%, -50%);"></i>
+      <a href="/"><i class="fa-solid fa-house" style="color: #014887; font-size: 36px; position: absolute; margin-left: 45%; margin-top: 35px; transform: translate(-50%, -50%);"></i></a>
       <i class="bi bi-search" style="color: #014887; font-size: 36px; position: absolute; margin-left: 40%; margin-top: 35px; transform: translate(-50%, -50%);"></i>
       </div>
       
@@ -70,7 +70,7 @@
           <h1>Add Post</h1>
 
           <input type="text" name="caption"id="add_post1" placeholder= "Write Something....">
-          <input type="file" name="image" class="imageSelector" accept="image/jpeg, image/png, image/jpg">
+          <input type="file" name="image" class="imageSelector" id="file" accept="image/jpeg, image/png, image/jpg">
 
           <button type="submit" class="btn" id="Posting" >Post</button>
           <button type="button" class="btn cancel" id="Close" value="reset" onclick="closeForm()">Close</button>
@@ -91,7 +91,7 @@
 
     </div>
 
-    @foreach($feedpost as $feed)
+    @foreach($post as $post)
     <div class = "row row-cols-auto" style="margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
       <div class = "col" ></div>
 
@@ -101,16 +101,16 @@
         </div>
 
         <div id = "course_post" style="font-size: 10px;">
-        {{$feed->created_at}}
+        {{$post->created_at}}
         </div>
 
         <div>
-          <p id = "caption" name="caption">{{$feed->caption}}</p>
+          <p id = "caption" name="caption">{{$post->caption}}</p>
         </div>
       
         <div id = "post_content">
           <div id = "image_container" >
-          <img src="{{$feed->image}}" style = "width: 100%;border-radius: 20px; height:100%" alt="">
+          <img src="{{$post->image}}" style = "width: 100%;border-radius: 20px; height:100%" alt="">
           </div>
 
           <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->

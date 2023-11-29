@@ -22,8 +22,10 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'caption' => 'max:500|unique:student_posts',
-            'image' => 'max:500'
+            'user_id' => 'max:12|required',
+            'caption' => 'max:500|unique:post',
+            'image' => 'max:500',
+            
         ];
     }
 }

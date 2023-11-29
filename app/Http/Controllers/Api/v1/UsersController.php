@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -71,6 +72,8 @@ class UsersController extends Controller
     }
 
     public function storeAdmin(Request $request){
+
+       
         
        $user = User::create([
         'studentID'=>$request->studentID,
@@ -79,7 +82,7 @@ class UsersController extends Controller
         'middle_name'=>$request->MiddleName,
         'course'=>$request->Course,
         'email'=>$request->Email,
-        'password'=>$request->Password,
+        'password'=>Hash::make($request->Password),
 
        ]);
     
@@ -88,6 +91,12 @@ class UsersController extends Controller
        }
        return redirect('admin')->with('success', 'Data Succesfully Created');
     }
+
+
+    public function update(){
+        
+    }
+  
 
    
 }

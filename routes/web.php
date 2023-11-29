@@ -9,12 +9,13 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeTestController;
 use App\Http\Controllers\AuthControllerTeacher;
 use App\Http\Controllers\HomeTestControllerTeacher;
-use App\Http\Controllers\Api\v3\PostController;
-use App\Http\Controllers\FeedController;
+use App\Http\Controllers\PostController;
+
 use App\Http\Controllers\SampleFeedController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Feed;
+use App\Models\Post;
 use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\DB;
@@ -84,22 +85,22 @@ Route::post('add', [UsersController::class, 'store']);*/
     Route::get('/studentHomePage', [HomeTestControllerTeacher::class, 'index']);
     Route::delete('/logoutTeacher', [AuthControllerTeacherr::class, 'logoutTeacher'])->name('logout');
 
-    
+   /* 
     Route::post('/studentHomePage', function(){
         $feeds = new Feed();
         $feeds->image = request('image');
         $feeds->caption = request('caption');
     });
-
+*/
     /*Route::get("students", [FeedController::class, 'studentHomePage']);*/
 
     Route::get('admin', [UsersController::class, 'records']);
 
     Route::view('studentHomePage', 'studentHomePage');
-    Route::POST('studentHomePage', [FeedController::class, 'studentHomePage']);
+    Route::POST('studentHomePage', [PostController::class, 'studentHomePage']);
 
     Route::get('/studentHomePage', function(){
-        $feedpost = DB::table('feedpost')->get();
+        $post = DB::table('post')->get();
         
         return view ('studentHomePage');
     });
@@ -108,11 +109,23 @@ Route::post('add', [UsersController::class, 'store']);*/
     Route::get('/click_delete/{id}', [UsersController::class, 'deleteStudent']);
 
     Route::post('/click_create/{id}', [UsersController::class, 'storeAdmin']);
-
+/*
     Route::post('homeStudent', [FeedController::class, 'store']);
    
     Route::resource('/studentHomePage', FeedController::class);
-
+*/
     Route::get('/profilePage', function(){
         return view ('studentProfile');
     });
+
+    Route::get('generate_password',[UsersController::class, 'generatePass']);
+
+    Route::post('/studentHomePage', function(){
+        $post = new Post();
+        $post->image = request('image');
+        $post->caption = request('caption');
+    });
+
+    Route::post('homeStudent', [PostController::class, 'store']);
+   
+    Route::resource('/studentHomePage', PostController::class);

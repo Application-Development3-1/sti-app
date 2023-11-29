@@ -95,8 +95,12 @@
             </div>
 
             <div class = "Admin">
-            <label for="adminPassword"><b>Password</b></label>
-            <input type="text" name="Password"class="adminPassword" id="adminPassword">
+                <label for="adminPassword"><b>Password</b></label>
+                <input type="text" name="Password"class="adminPassword" id="adminPassword">
+            </div>
+
+            <div class="generate">
+                <button onclick="createPassword()" type="button" class="btn btn-primary generate-password" id="generatePassword">Generate</button>
             </div>
 
             <button href="/click_delete/{{ $users->id }}" type="submit" class="btn" id="Posting" >Post</button>
@@ -130,9 +134,9 @@
             </div>
    
 
+    
 
 
-
-    <!--<script src="/assets/js/storeDataAdmin.js"></script>-->
+    <script src="/assets/js/passwordGenerators.js"></script>
   </body>
 </html>
