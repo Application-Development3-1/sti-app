@@ -67,6 +67,7 @@ class UsersController extends Controller
 
     public function deleteStudent($id){
         DB::delete('delete from users where id = ?', [$id]);
+        DB::delete('delete from post where id =?', [$id]);
         return redirect('admin')->with('success', 'Data Deleted');
 
     }
