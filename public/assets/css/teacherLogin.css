@@ -344,3 +344,9 @@ form{
       background-position: 400%;
     }
   }
+
+  #msg{
+    color: red;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }

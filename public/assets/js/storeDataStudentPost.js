@@ -5,7 +5,7 @@ window.addEventListener('load', function(){
 
 function postSubmitListener()
 {
-    let studentPost = document.querySelector('#post_box');
+    let studentPost = document.querySelector('#postbox');
     document.querySelector('#Posting').addEventListener('click', async (e) =>{
         e.preventDefault();
     
@@ -26,7 +26,7 @@ function postSubmitListener()
                 }
             })
             let data = await response.json();
-            alert(JSON.stringify(data));
+          
         }
     
     })

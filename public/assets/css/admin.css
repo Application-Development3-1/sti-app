@@ -9,7 +9,7 @@
     font-weight: bold;
     font-style: italic;
     text-decoration:underline;
-    margin-left: 100px; 
+    margin-left: 110px; 
     margin-top: 50px; 
     position: absolute; 
     transform: translate(-50%, -50%);
@@ -19,26 +19,38 @@
     }
 
 #admin_text_2{
-    margin-top: 130px;
+    margin-top: 100px;
+    margin-bottom: 10px;
     width: 50%;
 }
 
 #admin_text_acc{
-    color: #696969 ; 
+    color: #025bab; 
     font-size: 35px; 
     font-weight: bold;
-    margin-left: 60px; 
-    margin-bottom: 15px;
+    margin-left: 50px;
 }
 
 #table-container{
     border: solid 1px #000000;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 20px 20px 20px;
     height: 600px;
     width: 1480px;
     background-color: #D9D9D9;
     margin-left: 20px;
     position: absolute;
+    box-shadow: 5px 5px 5px rgb(159, 158, 158);
+}
+
+#table-container2{
+    border: solid 1px #000000;
+    border-radius: 0 20px 20px 20px;
+    height: 600px;
+    width: 1480px;
+    background-color: #cccbcb;
+    margin-left: 20px;
+    position: absolute;
+    box-shadow: 5px 5px 5px rgb(159, 158, 158);
 }
 
 #dynamic_id_list{
@@ -59,7 +71,7 @@
 }
 
 #disable_row_color{
-    color: white;
+    border-radius: 0 20px 0 0;
 }
 
 #dynamic_id_list th{
@@ -114,9 +126,9 @@
 
 #add_button_container{
     position: absolute;
-    margin-left: 1350px;
-    margin-top: 41%;
-    margin-bottom: 15%;
+    margin-left: 1300px;
+    margin-top: 35%;
+    padding-bottom: 50px;
     display: inline-flex;
     justify-content: center;
     align-content: center;
@@ -135,6 +147,21 @@
     transition: all 0.2s ease;
     margin-bottom: 10%;
     display: fixed;
+    box-shadow: 5px 5px 5px rgb(159, 158, 158);
+}
+
+#add_button_style:hover{
+    -webkit-box-shadow: 0px 0px 15px 0px #222aff;
+    -moz-box-shadow: 0px 0px 15px 0px #00bbee;
+    box-shadow: 0px 0px 15px 0px #0071d4;
+    animation: animate 8s ease infinite;
+    transition: box-shadow, 0.4s;
+    border: none;
+    font-size: 30px;
+    transform: scale(1.05, 1.05);
+    background: linear-gradient(90deg, #014887, #2298ff, #222aff, #007fee);
+    background-size: 400%;
+    animation: animate 7s cubic-bezier(0.75, 0.75, 0.75, 0.75) infinite,
 }
 
 #add_button_style:active{
@@ -145,7 +172,6 @@
     color: white; 
     font-size: 25px; 
     margin-left: 10px;
-
 }
 
 #adminForm{
@@ -160,4 +186,55 @@
     display: flex;
     align-items: flex-end;
     top: 600px;
+}
+
+/*btn sa taas student/teacher*/
+.btn__student{
+    margin-left: 20px;
+    border: solid 1px #000000;
+    background-color: #FFD21D;
+    border-top-right-radius: 80px;
+    border-top-left-radius: 20px;
+    width: 200px;
+    transition: ease 0.5s;
+}
+
+.btn__student h4 {
+    text-decoration: none;
+    color:#025bab;
+}
+
+.btn__teacher{
+    border: solid 1px #000000;
+    background-color: #FFD21D;
+    border-top-right-radius: 80px;
+    border-top-left-radius: 20px;
+    width: 200px;
+    transition: ease 0.5s;
+}
+
+.btn__teacher h4 {
+    text-decoration: none;
+    color:#025bab;
+}
+
+.btn__student:hover{
+    border: solid 1px #000000;
+    background-color: #ffe11d;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 250px;
+    transition: ease 0.5s;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.btn__teacher:hover{
+    border: solid 1px #000000;
+    background-color: #ffe11d;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 250px;
+    transition: ease 0.5s;
+    letter-spacing: 2px;
 }

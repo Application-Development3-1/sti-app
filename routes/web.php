@@ -16,6 +16,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Feed;
 use App\Models\Post;
+use App\Models\Profile;
 use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\DB;
@@ -109,14 +110,6 @@ Route::post('add', [UsersController::class, 'store']);*/
     Route::get('/click_delete/{id}', [UsersController::class, 'deleteStudent']);
 
     Route::post('/click_create/{id}', [UsersController::class, 'storeAdmin']);
-/*
-    Route::post('homeStudent', [FeedController::class, 'store']);
-   
-    Route::resource('/studentHomePage', FeedController::class);
-*/
-    Route::get('/profilePage', function(){
-        return view ('studentProfile');
-    });
 
     Route::get('generate_password',[UsersController::class, 'generatePass']);
 
@@ -129,3 +122,37 @@ Route::post('add', [UsersController::class, 'store']);*/
     Route::post('homeStudent', [PostController::class, 'store']);
    
     Route::resource('/studentHomePage', PostController::class);
+
+    
+    Route::get('/profile', function () {
+
+        return view('profile');
+    });
+
+    
+    Route::post('/profile', function(){
+        $profile = new Profile();
+        $profile->image = request('ProfilePicture');
+    });
+
+    Route::get('/profile', function(){
+        $profile = DB::table('profile')->get();
+        
+        return view ('profile');
+    });
+
+    Route::post('profile', [ProfileController::class, 'store']);
+
+    Route::resource('/profile', ProfileController::class);
+
+    Route::get('/lostAndFound', function(){
+        return view('lostAndFound');
+    });
+
+    Route::get('/bulletin', function(){
+        return view('bulletin');
+    });
+
+    Route::get('/yourGroup', function(){
+        return view('yourGroup');
+    });

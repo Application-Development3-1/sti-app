@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 .bodycolor{
     background-color: #F6F6EF;
   }
@@ -14,14 +18,20 @@
   }
   
   #box{
-    
     width: 275px;
-    height: 100px;
+    height: 280px;
     margin-top: 30px;
+    padding-top: 20px;
+    padding-left: 20px;
     border-radius: 20px;
     margin-left: 60px;
+    position: absolute;
+
+    background: rgba(96, 187, 255, 0.31);
+    box-shadow: 0 4px 5px 0 #656565;
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
   }
-  
   
   #text_style{
     color: #11110e;
@@ -34,11 +44,11 @@
     width: 730px;
     height: 100px;
     margin-top: 20px;
-    margin-left: 70px;
+    margin-left: 27%;
     margin-right: 20px;
     border-radius: 20px;
     background-color: white;
-    box-shadow: 0 2px 1px 0 #e3e3d7;
+    box-shadow: 0 4px 5px 0 #656565;
   }
   
   .bulletin{
@@ -68,20 +78,30 @@
     margin-left: 20px;
     font-weight: 2;
     color: #11110e;
-  
     margin-bottom: 20px;
   }
   
   #member_post{
     height: 700px;
     width: 730px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 380px;
     border-radius: 20px; 
     background-color : #014887;
+    box-shadow: 0 4px 5px 0 #656565;
+  }
 
-  
-    box-shadow: 0 3px 1px 0 #e3e3d7;
+  .fa-solid, .fas{
+    font-weight: 900;
+    color: white;
+    font-size: 25px;
+  }
+
+  .del__btn{
+    position: absolute;
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 5px;
   }
   
   #caption{
@@ -119,7 +139,78 @@
     border-radius: 20px;
     display: flex;
   }
+
+  .image-cropper{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    margin-left:30px ;
+    margin-top:25px ;
+    transform: translate(-50%, -50%);
+    
+    background: rgba(96, 187, 255, 0.31);
+    box-shadow: 0 2px 3px 0 #656565;
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+  }
+
+  .profile-image{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
   
+  .image-cropper-2{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    margin-left:40px ;
+    margin-top:45px ;
+    transform: translate(-50%, -50%);
+
+    background: rgba(96, 187, 255, 0.31);
+    box-shadow: 0 2px 3px 0 #656565;
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+  }
+
+  .profile-image-2{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+
+  .image-cropper-3{
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    margin-left:40px ;
+    margin-top:45px ;
+    transform: translate(-50%, -50%);
+
+    background: rgba(96, 187, 255, 0.31);
+    box-shadow: 0 2px 3px 0 #656565;
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+  }
+
+  .post-profile{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
   
   #calendar{
     width: 230px;
@@ -151,6 +242,7 @@
   #rowlength{
     width: 100%;
   }
+
   
   #post_text{
     font-weight: bold; 
@@ -170,10 +262,14 @@
     font-weight: bold; 
     color: #014887
   }
-  #left_text_style li{
+  #left_text_style li {
     margin-left: 40px;
-    margin-top: 10px;
+    margin-bottom: 20px;
     list-style: none;
+  }
+  
+  ul li a{
+    color: #014887;
   }
   
   #prof{
@@ -183,9 +279,8 @@
   }
   
   ul li a{
-    
     text-decoration: none;
-  }
+    }
   
   ul li a:visited{
     color: #014887;

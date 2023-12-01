@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -39,23 +41,35 @@ class PostController extends Controller{
         $images[] = $post;
         /*return redirect('studentHomePage');*/
 
+        /*specific post for user*/
+        
+
+        return view ('studentHomePage', compact('data'));
+
     }
+
 
     public function index(){
 
         $idarray = Post::all()->modelKeys();
         $idmax= end($idarray);
         $post = Post::all();
+
         $reverse= $post->reverse();
         $reverse->all();
+
+        $user_id=Auth::user()->id;
         
+        $profiles = Profile::where('user_id', $user_id)->latest()->first();
+
 
        /* $feedpost = Feed::where('id', $idmax)->get();*/
         
         
-       return view('studentHomePage', ['post'=>$reverse], compact('idarray'));
+       return view('studentHomePage', ['post'=>$reverse], ['profiles'=>$profiles]);
    
     }
+
 
     public function store(Request $request){
         $request->validate([
@@ -63,21 +77,20 @@ class PostController extends Controller{
             
         ]);
 
-         
         $requestData = $request->all();
         
 
         $fileName = time().$request->file('image')->getClientOriginalName();
 
         $path =$request->file('image')->storeAs('public/images/', $fileName, 'public');
+
         $userId= $request->input('user_id');
 
         $requestData["image"] = '/storage/'.$path;
-
         
         Post::create($requestData, $userId);
 
-        
+
        /* $fileName = $request->file("image")->getClientOriginalName();
         $userId = Auth::user()->id;
         $caption = $request->input('caption');
@@ -95,10 +108,17 @@ class PostController extends Controller{
 
         return redirect('studentHomePage')->with('message','Post Success!');
     }
+
+    /*public function innerJoin(){
+        $result = DB::table('users')
+        ->join('post', 'users.id', '=', 'post.user_id')
+        ->select('users.first_name','post.user_id')
+        ->get();
+
+
+    }*/
     
 }
-
-
 
 /*
 class FeedController extends Controller
