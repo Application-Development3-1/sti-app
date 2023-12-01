@@ -1,0 +1,113 @@
+   *{
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+   .bodycolor{
+     background-color: #F6F6EF;
+   }
+   
+   .STIlogo{
+     background-image: url(pics/stilogo.png);
+     width: 100px;
+     height: 61px;
+     top: 0%;
+     left: 0%;
+     margin-top: 100px;
+     margin-left: 20px;
+     position: absolute;
+   }
+   
+   #top_bar_container{
+     height: 61px; 
+     background-color: #FFD21D;
+   }
+   
+   
+   #lost_and_found_container{
+     color: #014887; 
+     font-size: 20px; 
+     font-weight: bold;
+     margin-left: 20%; 
+     margin-top: 30px; 
+     position: absolute; 
+     transform: translate(-50%, -50%);
+   }
+   
+   #icon_home_container{
+     position: absolute; 
+     margin-left:  98%; 
+     margin-top: 30px; 
+     transform: translate(-50%, -50%);
+   }
+   
+   #icon_home_style{
+     color: #014887; 
+     font-size: 30px;
+   }
+   
+   #post_outer_container{
+     position:absolute; 
+     transform: translate(-50%, -50%); 
+     margin-left: 42%; 
+     margin-top: 325px;
+   }
+   
+   #post_container{
+     height: 590px;
+     width: 700px;
+     margin-top: 30px;
+     margin-left: 300px;
+     border-radius: 20px;
+     background-color: #014887;
+   }
+   
+   #icon_person_circle_style{
+     color: #014887; 
+     font-size: 45px; 
+     position: absolute; 
+     margin-left: 50px; 
+     margin-top: 70px; 
+     transform: translate(-50%, -50%);
+   }
+   
+   #icon_plus_circle_fill_style{
+     color: white; 
+     font-size: 30px; 
+     position: absolute; 
+     margin-left: 620px; 
+     margin-top: 450px; 
+     transform: translate(-50%, -50%);
+   }
+   
+   #post_content_container{
+     background-color:#F6F6EF ;
+     height: 320px;
+     width: 570px;
+     margin-top: 10px;
+     margin-left: 50px;
+     border-radius: 20px;
+   }
+  
+   #user_post_profile{
+    list-style-type: none;
+    margin-top: 45px; 
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+   }
+
+  #post_text_content{
+    list-style-type: none;
+    margin-top: 10px; 
+    font-size: 12px;
+    color: white;
+  }
+  
+  #post_pic{
+    background-image: url(pics/pencil_case_sample_sa_lostandfound\ \(1\).jpg);
+    height:320px;
+    width: 550px;
+    margin-left: 10px;
+    border-radius: 20px;
+  }

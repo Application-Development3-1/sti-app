@@ -35,11 +35,6 @@
                     <h1 class="card-title">Teacher Login</h1>
                 </div>
                 <div class="card-body">
-                    @if(Session::has('error'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ Session::get('error') }}
-                        </div>
-                    @endif
                     <form action="{{ route('login2') }}" method="POST">
                         @csrf
                         <div class="mb-3">
@@ -51,6 +46,11 @@
                             <label for="password2" class="form__label__Pass">Password</label>
                         </div>
                         <div class="mb-3">
+                            @if(Session::has('error'))
+                                <div id="msg" role="alert">
+                                    {{ Session::get('error') }}
+                                </div>
+                            @endif
                             <div class="d-grid">
                                 <button class="btn btn-primary" id="btn__login">Login</button>
                             </div>

@@ -1,0 +1,108 @@
+.bodycolor{
+    background-color: gray;
+}
+
+.rectangle{
+    background-color:#FFD21D;
+    width: 100%;
+    height: 61px;
+}
+
+.STIlogo{
+    background-image: url("pics/sti-college.jpg");
+    width: 100px;
+    height: 61px;
+    top: 0%;
+    left: 0%;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+#textbulletin{
+    color: #008fef;
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    margin-left: 185%;
+    transform: translate(-50%, -50%);
+}
+
+#upcomingevents{
+    margin-top: 40px;
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+}
+
+#textupcome{
+    margin-left: 10px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+#line{
+    border-bottom: 1px solid black;
+    width: 97%;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+#rowLength{
+    width: 100%;
+
+}
+
+#eventBox1{
+    margin-top: 40px;
+    background-color:white;
+    height: 300px;
+    border-radius: 15px;
+}
+
+#eventBox2{
+    margin-left: 50px;
+    margin-top: 40px;
+    background-color:white;
+    height: 300px;
+    border-radius: 15px;
+
+}
+#eventBox3{
+    margin-top: 40px;
+    background-color:white;
+    height: 300px;
+    border-radius: 15px;
+
+}
+
+#textEvent{
+    margin-top: 10px;
+    text-align: center;
+}
+
+#eventline{
+    border-bottom: 1px solid black;
+    width: 90%;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+#eventBox{
+    margin-top: 30px;
+    background-color:white;
+    height: 75px;
+    border-radius: 15px;
+}
+
+#event{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+    background-color:white;
+    height: 75px;
+    border-radius: 15px;
+}

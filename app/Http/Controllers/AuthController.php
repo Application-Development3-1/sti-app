@@ -25,7 +25,7 @@ class AuthController extends Controller
             return redirect('/studentHomePage')->with('success', 'Login Success');
         }
  
-        return back()->with('error', 'Error Email or Password');
+        return back()->with('error', 'Invalid StudentID or Password!');
     }
  
     public function logout()

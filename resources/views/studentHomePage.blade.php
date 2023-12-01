@@ -3,10 +3,13 @@
   <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/_homePage.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/_homepage.css">
     <link rel="stylesheet" type="text/css" href="assets/css/ImageSelectorPopUp.css">
+    <link rel="stylesheet" type ="text/css"href="assets/css/EditAndDeletePopUp.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/ellipsis?f=classic&s=solid">
+    <link rel="stylesheet" href="https://fontawesome.com/icons/right-to-bracket?f=classic&s=solid"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="images/stilogo.png">
     
@@ -14,39 +17,48 @@
 
   </head>
   <body class = "bodycolor">
-    <div class="row" style="height: 70px; background-color: white;">
+    <div class="row" style="height: 70px; background-color: #FFD21D; box-shadow: 0 4px 5px 0 #656565; position: sticky; top:0; z-index: 1;">
       
       <div class = "col">
         <div class="STIlogo"></div>
       </div>
 
       <div class ="col">
-      <a href="/"><i class="fa-solid fa-house" style="color: #014887; font-size: 36px; position: absolute; margin-left: 45%; margin-top: 35px; transform: translate(-50%, -50%);"></i></a>
-      <i class="bi bi-search" style="color: #014887; font-size: 36px; position: absolute; margin-left: 40%; margin-top: 35px; transform: translate(-50%, -50%);"></i>
-      </div>
+      <i class="bi bi-search" style="color: #014887; font-size: 36px; position: absolute; margin-left: 39%; margin-top: 35px; transform: translate(-50%, -50%);"></i>
+      <a href="#"><i class="fa-solid fa-house" style="color: #014887; font-size: 36px; position: absolute; margin-left: 43%; margin-top: 35px; transform: translate(-50%, -50%);"></i></a>
+      <i class="fa-solid fa-right-to-bracket" style="color: #014887; font-size: 36px; position: absolute; margin-left: 47%; margin-top: 37px; transform: translate(-50%, -50%);"></i>
+    </div>
       
   </div>
 
   <div class = "container-fluid justify-content-center">
     <div class = "row row-cols-auto" id="rowlength">
 
-      <div class = "col" id="box" >
+
+      <div class = "side__nav" id="box">
         <div id = "prof">
-        <i class="bi bi-person-circle" style="color: #014887; font-size: 50px; position: absolute; margin-left: 20px; margin-top: 20px; transform: translate(-50%, -50%);"></i>
         </div>
-        <i class="bi bi-people-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 20px; margin-top: 80px; transform: translate(-50%, -50%);"></i>
-        <i class="bi bi-calendar-date-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 20px; margin-top: 120px; transform: translate(-50%, -50%);"></i>
-        <i class="bi bi-question-circle-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 20px; margin-top: 160px; transform: translate(-50%, -50%);"></i>
-        <i class="bi bi-bookmark-star-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 20px; margin-top: 205px; transform: translate(-50%, -50%);"></i>
+
+        <a href="/profile"> 
+          <div class="image-cropper">
+            <img src="{{$profiles->ProfilePicture}}" class="profile-image">
+          </div>
+        </a>
+
+        <i class="bi bi-people-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 30px; margin-top: 82px; transform: translate(-50%, -50%);"></i>
+        <i class="bi bi-calendar-date-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 30px; margin-top: 130px; transform: translate(-50%, -50%);"></i>
+        <i class="bi bi-question-circle-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 30px; margin-top: 175px; transform: translate(-50%, -50%);"></i>
+        <i class="bi bi-bookmark-star-fill" style="color: #014887; font-size: 30px; position: absolute; margin-left: 30px; margin-top: 220px; transform: translate(-50%, -50%);"></i>
+          
           <div id="left_text_style" >
             <ul>
               <li style="font-size: large;">{{Auth::user()->first_name}} {{Auth::user()->last_name}} 
-                <li style="font-size: 10px;">{{Auth::user()->course}}</li>
+                {{Auth::user()->course}}
               </li>
-              <li><a href="yourgrouppage.html">Your Group</a></li>
-              <li>Calendar</li>
-              <li><a href="lostfound.html">Lost and Found</a></li>
-              <li><a href="bulletinboard.html">Bulletin</a></li>
+              <li class="side__nav"><a href="/yourGroup">Your Group</a></li>
+              <li class="side__nav"><a href="/">Calendar</a></li>
+              <li class="side__nav"><a href="/lostAndFound">Lost and Found</a></li>
+              <li class="side__nav"><a href="/bulletin">Bulletin</a></li>
             </ul>
           </div>
       </div>
@@ -55,13 +67,18 @@
       <!--CREATING POST-->
       
       <div class = "col-sm-1" id="postbox" >
-        <i class="bi bi-person-circle" style="color: #014887; font-size: 50px; position: absolute; margin-left: 40px; margin-top: 50px; transform: translate(-50%, -50%);"></i>
+      <a href="/profile"> 
+          <div class="image-cropper-2">
+            <img src="{{$profiles->ProfilePicture}}" class="profile-image-2">
+          </div>
+        </a>
         <input type="text" name="post"id="add_post" placeholder= "Write Something...." onclick="openForm()">
 
         <button type= "button" class="ImageButton" style="border: transparent; background: transparent; margin-left: 0px; " onclick="openForm()">
           <i class="bi bi-image-fill" id="imagebtn" style="color: #014887; font-size :30px; margin-left: 20px;">
           </i>
         </button>
+
       <!--POP-UP SELECT IMAGE-->
 
       <div class="form-popup" id="myForm" method="post">
@@ -79,6 +96,9 @@
         </form>
       </div>
 
+      <!-- END POP-UP SELECT IMAGE-->
+
+
       <!--END POP-UP SELECT IMAGE-->
       </div>
       <!--END OF CREATING POST-->
@@ -92,17 +112,48 @@
 
     </div>
 
-    @foreach($post as $post)
+
+
+    @foreach($post as $post )
     <div class = "row row-cols-auto" style="margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
       <div class = "col" ></div>
 
       <div class = "col" id = "member_post">
-        <i class="bi bi-person-circle" style="color: #ffff; font-size: 50px; position: absolute; margin-left: 40px; margin-top: 45px; transform: translate(-50%, -50%);"></i>       <div id = "post_text">
-          {{Auth::user()->first_name}} {{Auth::user()->last_name}} 
+        <div class="image-cropper-3">
+          <img src="{{$profiles->ProfilePicture}}" class="post-profile" alt="">       
+        </div>
+        
+      <!--delete button-->  
+        <div class="del__btn"  onclick="open()" >
+          <i class="fa-solid fa-ellipsis"></i>
+          
+      <!--ELLIPSIS BUTTON POPUP-->
+
+        <div class="my-popup" id="myForm">
+          <form action="..." class="my-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="close()">Close</button>
+          </form>
+        </div>
+
+      <!--ELLIPSIS BUTTON END-->
+    
+        </div>
+        
+        <div id = "post_text">
+          {{$post->user->first_name}} {{$post->user->last_name}} 
         </div>
 
         <div id = "course_post" style="font-size: 10px;">
-        {{$post->created_at}}
+          {{$post->created_at}}
         </div>
 
         <div>
@@ -143,5 +194,6 @@
   <script src="/assets/js/_studentMainPage.js"></script>
   <script src="/assets/js/ImageSelectPopUp.js"></script>
   <script src="/assets/js/LikeButtonStudent.js"></script>
+  <script src="/assets/js/EditAndDeletePopUp.js"></script>
   </body>
 </html>
