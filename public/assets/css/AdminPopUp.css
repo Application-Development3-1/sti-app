@@ -14,8 +14,36 @@
     margin-bottom: 30px;
     font-style: italic;
   }
+
+.teacherform-container h1{
+    margin-top: 10px;
+    font-size: 35px;
+    color: #008FEF;
+    background-color: #FFD21D;
+    width: 150px;
+    padding: 5px 20px;
+    margin-left: 20px;
+    border-radius: 50px 0;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
   /* The popup form - hidden by default */
   #adminForm {
+    display: none;
+    position: fixed;
+    
+    border: transparent;
+    z-index: 9;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    
+    width: 700px;
+  }
+
+  #adminTeacherForm {
     display: none;
     position: fixed;
     
@@ -40,8 +68,24 @@
     box-shadow: 2px 2px 2px 2px #e3e3d7;
   }
   
+  .teacherform-container {
+    max-width: 800px;
+    height : 550px;
+    padding: 10px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px #e3e3d7;
+  }
+
   /* When the inputs get focus, do something */
   .form-container input[type=text]:focus{
+    background-color: rgb(241, 241, 241);
+    outline: none;
+    border-bottom: 1px solid #008FEF;
+  }
+
+    /* When the inputs get focus, do something */
+  .teacherform-container input[type=text]:focus{
     background-color: rgb(241, 241, 241);
     outline: none;
     border-bottom: 1px solid #008FEF;
@@ -49,6 +93,17 @@
   
   /* Set a style for the submit/login button */
   .form-container .btn {
+    background-color: #008FEF;
+    color: white;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-bottom: 10px;
+  }
+
+    /* Set a style for the submit/login button */
+  .teacherform-container .btn {
     background-color: #008FEF;
     color: white;
     height: 50px;
@@ -80,7 +135,32 @@
     opacity: 2;
   }
 
-#adminForm label {
+
+  /* Add a red background color to the cancel button */
+  .teacherform-container .cancel {
+    background-color: red;
+  }
+
+  #Posting{
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 90px;
+  }
+
+  #cancel{
+    width: 200px;
+    margin-left: 80px;
+    margin-top: 60px;
+   }
+
+  .teacherform-container .btn:hover, .open-button:hover {
+    opacity: 2;
+  }
+
+   /* end teacher*/
+
+
+#adminTeacherForm label {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -158,5 +238,18 @@ input{
     padding-bottom: 30px;
     margin-right: 100px;
 }
+
+.teacherform-container #generatePassword{
+  background-color: yellowgreen;
+  height: 5px;
+  padding-bottom: 30px;
+  margin-right: 100px;
+}
+
+
+
+
+/*TEACHERRRRRRRRRRRRRRRRRRRRRRRR*/
+
 
 

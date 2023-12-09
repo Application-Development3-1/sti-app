@@ -1,4 +1,5 @@
-const password_container = document.getElementById('adminPassword');
+const password_container = document.getElementById('studentPassword');
+const password_teacher = document.getElementById('adminPassword');
 const length = 10;
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -21,4 +22,5 @@ function createPassword(){
         password += allChars[Math.floor(Math.random() * allChars.length)];
     }
     password_container.value = password;
+    password_teacher.value = password;
 }

@@ -7,6 +7,14 @@ function openForm() {
     document.getElementById("adminForm").style.display = "none";
   }
 
+  function openTeacherForm() {
+    document.getElementById("adminTeacherForm").style.display = "block";
+  }
+  
+  function closeTeacherForm() {
+    document.getElementById("adminTeacherForm").style.display = "none";
+  }
+
   //changing table
 function openStudent(){
   var x = document.getElementById("table-container");

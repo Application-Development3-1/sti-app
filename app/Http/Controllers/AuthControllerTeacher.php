@@ -30,7 +30,7 @@ class AuthControllerTeacher extends Controller
  
     public function logoutTeacher()
     {
-        Auth::logout();
+        Auth::logout1();
  
         return redirect()->route('loginTeacher');
     }

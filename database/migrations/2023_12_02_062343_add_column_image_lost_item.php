@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-
+        Schema::table('lost_item', function(Blueprint $table){
+            $table->string('image');
+        });
     }
 
     /**

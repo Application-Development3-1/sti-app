@@ -59,7 +59,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Profile::class);
     }
-    
-    
 
+    public function lost(): HasMany
+    {
+        return $this->hasMany(LostItem::class);
+    }
 }

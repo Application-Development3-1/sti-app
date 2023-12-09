@@ -20,7 +20,7 @@
         <nav class="nav_yellow">
             <div class="nav_logo">
             <img id="logo_pic" src="images/stilogo.png" alt="logo"></img>
-            <div id ="your_profile_style">Your Profile</div>
+            <div id ="your_profile_style">YOUR PROFILE</div>
             <a href="/studentHomePage"><i class="fa fa-home" aria-hidden="true"></i></a>
             </div>
         </nav>
@@ -31,7 +31,7 @@
     <div class ="rectangle">
       @php($x=Auth::user()->id)
       <div class="image-cropper">
-        <img  src="{{$profiles->ProfilePicture}}" class="profile-pic"></img>
+        <img  src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-pic"></img>
         </div>
 
             <div id = "id_text_style">{{Auth::user()->first_name}} {{Auth::user()->last_name}} </div>
@@ -66,8 +66,8 @@
     <div id = "id_text_style_4"> Hello~! This is Hanni Pham~ You guys did not see anything, you only saw my beautiful face~. </div>
    
     <div class = "change_pass_rectangle">
-        <button type = "button" id = "change_password_style">
-            Change Password
+        <button type = "button" href="/userSettings" id = "change_password_style">
+            Edit Information
         </button>
     </div>
 
@@ -78,7 +78,7 @@
       <div class = "col" id = "member_post">
 
         <div class="image-cropper-2">
-          <img src="{{$profiles->ProfilePicture}}" class="profile_pic_for_post_style"></img>    
+          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
         </div> 
 
         <div id = "post_text">

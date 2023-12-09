@@ -109,14 +109,11 @@ class PostController extends Controller{
         return redirect('studentHomePage')->with('message','Post Success!');
     }
 
-    /*public function innerJoin(){
-        $result = DB::table('users')
-        ->join('post', 'users.id', '=', 'post.user_id')
-        ->select('users.first_name','post.user_id')
-        ->get();
+    public function deleteStudPost($id){
+        DB::delete('delete from post where id =?', [$id]);
+        return redirect('studentHomePage')->with('success', 'Data Deleted');
 
-
-    }*/
+    }
     
 }
 

@@ -7,30 +7,29 @@
    }
    
    .STIlogo{
-     background-image: url(pics/stilogo.png);
-     width: 100px;
-     height: 61px;
-     top: 0%;
-     left: 0%;
-     margin-top: 100px;
-     margin-left: 20px;
-     position: absolute;
+    display: flex;
+    position: relative; 
+    margin-left: 5px;
+    height: 70px;
+    cursor: pointer;
+    filter: drop-shadow(2px 3px 1px #0000005a);
    }
    
    #top_bar_container{
-     height: 61px; 
+     height: 70px; 
      background-color: #FFD21D;
    }
    
    
    #lost_and_found_container{
-     color: #014887; 
+     color: #025BAB; 
      font-size: 20px; 
      font-weight: bold;
-     margin-left: 20%; 
-     margin-top: 30px; 
+     margin-left:15%; 
+     margin-top: 35px; 
      position: absolute; 
      transform: translate(-50%, -50%);
+     filter: drop-shadow(2px 3px 1px #0000005a);
    }
    
    #icon_home_container{
@@ -42,8 +41,22 @@
    
    #icon_home_style{
      color: #014887; 
-     font-size: 30px;
+     font-size: 36px;
+     margin-right: 30px;
+     filter: drop-shadow(2px 3px 1px #0000005a);
    }
+
+   #icon_plus_circle_fill_style1{
+    color: #014887; 
+    font-size: 36px; 
+    position: absolute;  
+    margin-top: 32px;
+    margin-left: 93%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(2px 3px 1px #0000005a);
+    
+  }
    
    #post_outer_container{
      position:absolute; 
@@ -55,10 +68,15 @@
    #post_container{
      height: 590px;
      width: 700px;
-     margin-top: 30px;
+     margin-top: 20px;
      margin-left: 300px;
      border-radius: 20px;
+     position: relative;
+     left: 150px;
+     bottom: 200px;
      background-color: #014887;
+     box-shadow: 0 4px 5px 0 #656565;
+     
    }
    
    #icon_person_circle_style{
@@ -68,23 +86,27 @@
      margin-left: 50px; 
      margin-top: 70px; 
      transform: translate(-50%, -50%);
-   }
+   } 
    
-   #icon_plus_circle_fill_style{
+
+   #delete{
      color: white; 
      font-size: 30px; 
      position: absolute; 
      margin-left: 620px; 
-     margin-top: 450px; 
+     margin-top: 60px; 
      transform: translate(-50%, -50%);
    }
-   
+
+
+
+  
    #post_content_container{
      background-color:#F6F6EF ;
      height: 320px;
      width: 570px;
-     margin-top: 10px;
-     margin-left: 50px;
+     margin-top: 8%;
+     margin-left: 65px;
      border-radius: 20px;
    }
   
@@ -99,15 +121,165 @@
 
   #post_text_content{
     list-style-type: none;
-    margin-top: 10px; 
     font-size: 12px;
     color: white;
   }
   
   #post_pic{
-    background-image: url(pics/pencil_case_sample_sa_lostandfound\ \(1\).jpg);
     height:320px;
-    width: 550px;
-    margin-left: 10px;
+    /*width: 550px;*/
+    /*margin-left: 10px;*/
     border-radius: 20px;
   }
+
+  #post-pic{
+    height:100%;
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  #User-Name{
+    font-size: 14px;
+    color: #F6F6EF;
+    font-weight: bold;
+    margin-left: 120px;
+    top: 60px;
+    position: relative;
+  }
+
+
+  #what{
+    font-size: 12px;
+    color: #F6F6EF;
+    margin-left: 8%;
+    top: 80px;
+    position: relative;
+  }
+  #when{
+    font-size: 12px;
+    color: #F6F6EF;
+    margin-left: 8%;
+    top: 75px;
+    position: relative;
+  }
+
+  #where{
+    font-size: 12px;
+    color: #F6F6EF;
+    margin-left: 8%;
+    top: 25px;
+    position: relative;
+  }
+
+  #addinfo{
+    font-size: 12px;
+    color: #F6F6EF;
+    margin-left: 8%;
+    top: 25px;
+    position: relative;
+  }
+
+  #add_item{
+    width: 200px;
+    height: 50px;
+    margin-top: 10% ;
+    margin-left: 15%;
+
+    border-radius: 10px;
+  }
+
+  .image-cropper{
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+
+    margin-left:75px ;
+    margin-top:80px ;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(2px 3px 1px #0000005a);
+  }
+
+  .prof-pic{
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+  }
+
+  #delete{
+    color: white;
+  }
+
+
+
+
+  /*DELETE POP UP SA LOST AND FOUND*/
+  
+  /* Button used to open the contact form - fixed at the bottom of the page */
+.logout-popup h1{
+  font-size : 20px;
+  color: #008FEF;
+}
+/* The popup form - hidden by default */
+.logout-popup {
+  display: none;
+  position: absolute;
+  right: 1%;
+  border: transparent;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.logout-container {
+  max-width: 500px;
+  height : 150px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px #e3e3d7;
+  
+}
+
+
+/* Set a style for the submit/login button */
+
+#Posting_yes{
+  background-color: #008FEF;
+  color: white;
+
+  padding: 16px 80px;
+  opacity: 0.8;
+  Border: none;
+  border-radius: 10px;
+  
+}
+
+#Close_cancel{
+  background-color: red;
+  color:white;
+
+  padding: 16px 80px ;
+  opacity: 0.8;
+  border: none;
+  border-radius: 10px;
+
+}
+
+
+/* Add a red background color to the cancel button */
+
+/* Add some hover effects to buttons */
+.logout-container #Posting_yes:hover, .open-button:hover {
+  opacity: 2;
+}
+
+.logout-container #Close_cancel:hover, .open-button:hover {
+  opacity: 2;
+}
+
+
+
+
+  

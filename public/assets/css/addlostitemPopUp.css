@@ -1,0 +1,170 @@
+/* Button used to open the contact form - fixed at the bottom of the page */
+.form-popup h1{
+    font-size : 20px;
+    color: #008FEF;
+  }
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    position: absolute;
+    left: 35%;
+    border: transparent;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 500px;
+    height : 620px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px #e3e3d7;
+    
+  }
+
+#addlost{
+
+    margin-top: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #008fef;
+    font-weight: bold;
+
+}
+
+#textcontainer_what{
+    margin-top: 20px;
+    width: 640px;
+    height: 40px;
+    border-radius: 30px; /* pang curve ng edges ng box*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#textcontainer_when{
+    margin-top: 20px;
+    width: 640px;
+    height: 40px;
+    border-radius: 30px; /* pang curve ng edges ng box*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#textcontainer_where{
+    margin-top: 20px;
+    width: 640px;
+    height: 40px;
+    border-radius: 30px; /* pang curve ng edges ng box*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#textcontainer_additional{
+    margin-top: 20px;
+    width: 640px;
+    height: 40px;
+    border-radius: 30px; /* pang curve ng edges ng box*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+label{
+    display: block;
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    background-color: #008fef;
+    color:white;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    text-align: center;
+}
+
+#kuha-picture{
+    display: none;
+}
+
+.AddPicButton {
+    width: 270px;
+    margin-top: 10%;
+}
+
+
+#butpost{
+    margin-top: 10px;
+    width: 125px;
+    height: 40px;
+    border-radius: 30px;
+    margin-left: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #008fef;
+    color:white;
+    border: none;
+}
+
+#butcancel{
+    margin-top: 10px;
+    width: 125px;
+    height: 40px;
+    border-radius: 30px;
+    margin-left: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: red;
+    color:white;
+    border: none;
+}
+
+.picHere {
+    display: none;
+    
+}
+
+
+
+#openEllipsis{
+
+    display: none;
+    position: fixed;
+    
+    border: transparent;
+    z-index: 9;
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    
+    width: 700px;
+    
+}
+
+.delete_cont{
+    width: 400px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    
+}
+
+#Cancel{
+    background-color: #008FEF;
+    color: white;
+    border-radius: 10px;
+}
+
+#Delete{
+    background-color: Red;
+    color: white;
+    border-radius: 10px;
+}
+

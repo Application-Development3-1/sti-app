@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Teacher;
 use App\Http\Requests\StoreTeacherRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class TeachersController extends Controller
 {
@@ -45,4 +47,29 @@ class TeachersController extends Controller
             'teacher' => $teacher
         ]);
     }
+    public function deleteTeachers($id){
+        DB::delete('delete from teachers where id = ?', [$id]);
+       
+        return redirect('admin')->with('success', 'Data Deleted');
+    }
+
+    public function storeAdmin(Request $request){
+        $teachers = Teacher::create([
+         'employeeID'=>$request->employeeID,
+         'first_name'=>$request->FirstName,
+         'last_name'=>$request->LastName,
+         'middle_name'=>$request->MiddleName,
+         'department'=>$request->Course,
+         'email'=>$request->Email,
+         'password'=>Hash::make($request->Password),
+         
+ 
+        ]);
+        
+ 
+        if(!$teachers){
+         return redirect('admin')->with('error', 'unsuccessful');
+        }
+        return redirect('admin')->with('success', 'Data Succesfully Created');
+     }
 }

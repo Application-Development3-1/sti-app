@@ -61,4 +61,6 @@ class ProfileController extends Controller
 
         return redirect('profile')->with('message','Profile Update Complete!');
     }
+
+    
 }

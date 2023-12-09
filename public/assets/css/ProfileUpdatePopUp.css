@@ -23,16 +23,7 @@
     
   }
 
-  #add_post1{
-    background-color: #F6F6EF;
-    width: 890px;
-    height: 100px;
-    margin-top: 20px;
-    border-radius: 20px;
-    border: transparent;
-    padding-left: 20px;
-  }
-  
+
   /* When the inputs get focus, do something */
   .form-container input[type=file]:focus {
     background-color: #ddd;
