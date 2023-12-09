@@ -35,7 +35,7 @@
 
   <!--LOGOUT-->
         <div class="logout-popup" id="logoutForm">
-          <form action="{{route('logout')}}" class="logout-container" method="delete">
+          <form action="{{route('logout1')}}" class="logout-container" method="delete">
             @csrf
             <h1>Are you sure to logout?</h1>
             <button type="submit" class="btn_yes" id="Posting_yes" >Yes</button></a>

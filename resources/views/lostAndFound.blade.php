@@ -113,10 +113,10 @@
 
           <div class="LostAndFoundPost">
             <p id="User-Name">  {{$lost->user->first_name}} {{$lost->user->last_name}}</p>
-            <p class="Post-Caption" id="what">{{$lost->what}}</p>
-            <p class="Post-Caption" id="when">{{$lost->when}}</p>
-            <p class="Post-Caption" id="where">{{$lost->where}}</p>
-            <p class="Post-Caption" id="addinfo">{{$lost->additional}}</p>
+            <p class="Post-Caption" id="what">What: {{$lost->what}}</p>
+            <p class="Post-Caption" id="when">When: {{$lost->when}}</p>
+            <p class="Post-Caption" id="where">Where: {{$lost->where}}</p>
+            <p class="Post-Caption" id="addinfo">Description: {{$lost->additional}}</p>
           </div>
 
 

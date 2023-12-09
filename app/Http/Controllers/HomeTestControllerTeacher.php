@@ -8,6 +8,6 @@ class HomeTestControllerTeacher extends Controller
 {
     public function index()
     {
-        return view('students/studentHomePage');
+        return view('teachersHomePage');
     }
 }

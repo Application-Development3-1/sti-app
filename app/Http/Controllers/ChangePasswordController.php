@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class ChangePasswordController extends Controller
 {
     public function index(){
-        return view('userSettings');
+        return view('/userSettings');
     }
     public function __construct()
     {

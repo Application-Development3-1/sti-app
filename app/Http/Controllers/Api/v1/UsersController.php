@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
+use App\Models\Post;
+
 use App\Models\Profile;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
@@ -63,7 +66,7 @@ class UsersController extends Controller
         ]);
 
     }
-
+    /*sa database toh*/
     public function records(){
       $users = User::all();
       $teachers = Teacher::all();
@@ -97,10 +100,15 @@ class UsersController extends Controller
        return redirect('admin')->with('success', 'Data Succesfully Created');
     }
 
-
-    public function update(){
-        
+    public function profileRecords(){
+        $user_id = Auth::user();
+        $timeline = Post::all()->where('user_id', Auth::user()->id);
+            
+        return view('profile', compact('timeline'));
     }
+    
 
-    }
+
+   
+}
   

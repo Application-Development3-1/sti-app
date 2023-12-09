@@ -67,10 +67,6 @@ Route::get('/registrationStudent', function(){
     return view('registrationStudent');
 });
 
-/*Route::post('/login/process',[UsersController::class, 'process']);*/ 
-
-/*Route::get('add', [StudentController::class, 'display']);
-Route::post('add', [UsersController::class, 'store']);*/
 
 
 
@@ -88,21 +84,13 @@ Route::post('add', [UsersController::class, 'store']);*/
 
 
     Route::get('/studentHomePage', [HomeTestControllerTeacher::class, 'index']);
-    Route::delete('/logoutTeacher', [AuthControllerTeacherr::class, 'logoutTeacher'])->name('logout1');
+    Route::get('/logoutTeacher', [AuthControllerTeacher::class, 'logoutTeacher'])->name('logout1');
 
 
 
-
-   /* 
-    Route::post('/studentHomePage', function(){
-        $feeds = new Feed();
-        $feeds->image = request('image');
-        $feeds->caption = request('caption');
-    });
-*/
-    /*Route::get("students", [FeedController::class, 'studentHomePage']);*/
 
     Route::get('admin', [UsersController::class, 'records']);
+  
   
     
     
@@ -162,6 +150,9 @@ Route::post('add', [UsersController::class, 'store']);*/
 
     Route::resource('/profile', ProfileController::class);
 
+   
+    
+
     Route::get('/lostAndFound', function(){
         return view('lostAndFound');
     });
@@ -205,7 +196,11 @@ Route::post('add', [UsersController::class, 'store']);*/
         return view('teachersHomePage');
     });
 
+
     Route::get('/userSettings', [ChangePasswordController::class, 'index']);
+    Route::post('/userSettings', [ChangePasswordController::class, 'changePassword']);
+
+ 
     
 
   
