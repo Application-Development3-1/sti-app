@@ -4,6 +4,8 @@ function like(){
     var liked = document.getElementById("Like");
     liked.innerHTML = 'Liked';
     liked.style.color = "red";
+
+    
     if(likeButton.classList.contains("far")){
         likeButton.classList.remove("far");
         likeButton.classList.add("fas");

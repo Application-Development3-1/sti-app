@@ -7,14 +7,13 @@ html{
   }
   
   .STIlogo{
-    background-image: url('sti.jpg');
-    width: 100px;
-    height: 61px;
-    top: 0%;
-    left: 0%;
-    margin-top: 20px;
-    margin-left: 20px;
-    position: absolute;
+    display: flex;
+    position: relative;
+    padding: 0;
+    margin-left: 5px;
+
+    height: 70px;
+    filter: drop-shadow(2px 3px 1px #0000005a);
   }
   
   #box{
@@ -95,14 +94,15 @@ html{
     font-weight: 900;
     color: white;
     font-size: 25px;
+    transition: 0.3s;
+    
   }
 
-  .del__btn{
-    position: absolute;
-    position: absolute;
-    margin-left: 45%;
-    margin-top: 5px;
+  #del_btn{
+    margin-left: 95%;
+    position: relative;
   }
+
   
   #caption{
     color:#ffffff ;
@@ -249,7 +249,7 @@ html{
     color: #ffffff;
     font-size: 14px;
     margin-left: 80px;
-    margin-top: 30px;
+
   }
   
   #course_post{
@@ -307,3 +307,53 @@ html{
 
 
 
+.delete-container{
+  max-width: 500px;
+  height : 150px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px #e3e3d7;
+  
+}
+
+.delete-popup h1{
+  font-size : 20px;
+  color: #008FEF;
+}
+
+.delete-popup{
+  display: none;
+  position: absolute;
+  right: 1%;
+  border: transparent;
+  z-index: 9;
+}
+
+#deleting{
+  background-color: #008FEF;
+  color: white;
+
+  padding: 16px 60px;
+  opacity: 0.8;
+  Border: none;
+  border-radius: 10px;
+}
+  
+#closing{
+  background-color: red;
+  color:white;
+
+  padding: 16px 60px ;
+  opacity: 0.8;
+  border: none;
+  border-radius: 10px;
+}
+
+.delete-container #deleting:hover{
+  opacity: 2;
+}
+
+.delete-container #closing:hover{
+  opacity: 2;
+}

@@ -22,10 +22,9 @@
         <img id="logo_pic2" src="images/stilogo.png" alt="logo">
 
         <div class="fillup">
-            <form action="#" id="formReg" method="post">
+            <form action="#" id="formReg" method="post" >
             @csrf
-            
-                
+
                 <div class="user-details">
                     <div class="input-group">
                         <input name ="studentNum" type="text" required>

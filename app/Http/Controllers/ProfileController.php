@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Post;
+
 
 use App\Models\Profile;
 
@@ -18,7 +20,10 @@ class ProfileController extends Controller
 
         $profiles = Profile::where('user_id', $user_id)->latest()->first();
 
-        return view('profile', ['profiles'=>$profiles]);
+        $user_id = Auth::user();
+        $timeline = Post::all()->where('user_id', Auth::user()->id);
+
+        return view('profile', ['profiles'=>$profiles], compact('timeline'));
     }
 
     public function profile(Request $request){
@@ -61,4 +66,7 @@ class ProfileController extends Controller
 
         return redirect('profile')->with('message','Profile Update Complete!');
     }
+
+    
+    
 }

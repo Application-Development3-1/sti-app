@@ -35,7 +35,7 @@
 
   <!--LOGOUT-->
         <div class="logout-popup" id="logoutForm">
-          <form action="{{route('logout')}}" class="logout-container" method="delete">
+          <form action="{{route('logout1')}}" class="logout-container" method="delete">
             @csrf
             <h1>Are you sure to logout?</h1>
             <button type="submit" class="btn_yes" id="Posting_yes" >Yes</button></a>
@@ -65,8 +65,8 @@
           
           <div id="left_text_style" >
             <ul>
-              <li style="font-size: large;"><a href="/profile"> {{Auth::user()->first_name}} {{Auth::user()->last_name}} 
-                {{Auth::user()->course}}</a>
+              <li style="font-size: large;"><a href="/profile">
+                </a>
               </li>
               <li class="side__nav"><a href="/yourGroup">Your Group</a></li>
               <li class="side__nav"><a href="/">Calendar</a></li>
@@ -99,7 +99,7 @@
           @csrf
           <h1>Add Post</h1>
 
-          <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+          <input type="hidden" value="" name="user_id">
           <input type="text" name="caption"id="add_post1" placeholder= "Write Something....">
           <input type="file" name="image" class="imageSelector" id="file" accept="image/jpeg, image/png, image/jpg">
 
@@ -125,14 +125,14 @@
 
     </div>
 
-    @foreach($post as $post )
+    
     <div class = "row row-cols-auto" style="margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
       <div class = "col" ></div>
 
       <div class="delete-popup" id="deleteForm">
-        <form action="/post_delete/{{$post->id}}" class="delete-container" method="get">
+        <form action="" class="delete-container" method="get">
           <h1>Are you sure you want to delete this?</h1>
-          <button type="submit" class="btn_delete" id="deleting">Delete <a href="/post_delete/{{$post->id}}"></a> </button>
+          <button type="submit" class="btn_delete" id="deleting">Delete <a href=""></a> </button>
           <button type="button" class="btn Cancel" id="closing" value="reset" onclick="cancelDelete()">Cancel</button>
         </form>
       </div>
@@ -148,20 +148,20 @@
       <i class="fa-solid fa-ellipsis" onclick="openDelete()" id="del_btn"></i>
 
         <div id = "post_text">
-          {{$post->user->first_name}} {{$post->user->last_name}} 
+          
         </div>
 
         <div id = "course_post" style="font-size: 10px;">
-          {{$post->created_at}}
+          
         </div>
 
         <div>
-          <p id = "caption" name="caption">{{$post->caption}}</p>
+          <p id = "caption" name="caption"></p>
         </div>
       
         <div id = "post_content">
           <div id = "image_container" >
-            <img src="{{$post->image}}" style = "width: 100%;border-radius: 20px; height:100%" alt="">
+            <img src="" style = "width: 100%;border-radius: 20px; height:100%" alt="">
           </div>
 
           <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->
@@ -186,7 +186,7 @@
       </div>
 
     </div>
-    @endforeach
+    
   </div>
   
   <!--<script scr ="/assets/js/storeDataStudentPost.js"></script>-->

@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
-use Illuminate\Support\Str;
+use App\Models\Post;
+
+use App\Models\Profile;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\View;
-use Session;
-use validator;
+
 
 use function Laravel\Prompts\alert;
 
@@ -54,28 +55,32 @@ class UsersController extends Controller
        
         $user->save();
 
+        
+        Profile::create([
+         'user_id'=>$user->id,
+         'ProfilePicture'=>'/storage/public/profiles//1701528688NewJeans-Hanni.png.png'
+        ]); 
+
         return response()->json([
             'users' => $user
         ]);
-    }
 
+    }
+    /*sa database toh*/
     public function records(){
       $users = User::all();
+      $teachers = Teacher::all();
       
-      return view('admin', compact('users'));
+      return view('admin', compact('users', 'teachers'));
     }
 
     public function deleteStudent($id){
         DB::delete('delete from users where id = ?', [$id]);
         DB::delete('delete from post where id =?', [$id]);
         return redirect('admin')->with('success', 'Data Deleted');
-
     }
 
     public function storeAdmin(Request $request){
-
-       
-        
        $user = User::create([
         'studentID'=>$request->studentID,
         'first_name'=>$request->FirstName,
@@ -84,19 +89,26 @@ class UsersController extends Controller
         'course'=>$request->Course,
         'email'=>$request->Email,
         'password'=>Hash::make($request->Password),
+        
 
        ]);
-    
+       
+
        if(!$user){
         return redirect('admin')->with('error', 'unsuccessful');
        }
        return redirect('admin')->with('success', 'Data Succesfully Created');
     }
 
-
-    public function update(){
-        
+    public function profileRecords(){
+        $user_id = Auth::user();
+        $timeline = Post::all()->where('user_id', Auth::user()->id);
+            
+        return view('profile', compact('timeline'));
     }
+    
 
-    }
+
+   
+}
   

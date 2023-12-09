@@ -20,7 +20,7 @@
         <nav class="nav_yellow">
             <div class="nav_logo">
             <img id="logo_pic" src="images/stilogo.png" alt="logo"></img>
-            <div id ="your_profile_style">Your Profile</div>
+            <div id ="your_profile_style">YOUR PROFILE</div>
             <a href="/studentHomePage"><i class="fa fa-home" aria-hidden="true"></i></a>
             </div>
         </nav>
@@ -31,7 +31,7 @@
     <div class ="rectangle">
       @php($x=Auth::user()->id)
       <div class="image-cropper">
-        <img  src="{{$profiles->ProfilePicture}}" class="profile-pic"></img>
+        <img  src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-pic"></img>
         </div>
 
             <div id = "id_text_style">{{Auth::user()->first_name}} {{Auth::user()->last_name}} </div>
@@ -66,56 +66,56 @@
     <div id = "id_text_style_4"> Hello~! This is Hanni Pham~ You guys did not see anything, you only saw my beautiful face~. </div>
    
     <div class = "change_pass_rectangle">
-        <button type = "button" id = "change_password_style">
-            Change Password
+        <button type = "button"  id = "change_password_style">
+            <a>Edit Information</a>
         </button>
     </div>
 
     <div id = "posts_style">POSTS</div>
-    
-    <div class = "row row-col-auto" id = "post_area">
-        
+    @foreach($timeline as $timeline)
+    <div class = "row-col-auto" id = "post_area">
+      
       <div class = "col" id = "member_post">
 
         <div class="image-cropper-2">
-          <img src="{{$profiles->ProfilePicture}}" class="profile_pic_for_post_style"></img>    
+          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
         </div> 
 
         <div id = "post_text">
           {{Auth::user()->first_name}} {{Auth::user()->last_name}} 
         </div>
-
         <div id = "course_post">
-            November 29, 2023
+           {{$timeline->created_at}}
         </div>
 
         <div>
           <p id = "caption" name="caption">
-            #FlyhighSTI SIlip lng sa bintana ng classroom
+            {{$timeline->caption}}
           </p>
         </div>
       
-        <div id = "post_content">
-          <div id = "image_container" >
-          <img class = "object-fit-cover" src="images/Ditto.png" id = "img_post_style" alt="">
-          </div>
-
-          <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->
-
-          <!--<div class="interaction">
-            <div class="like">
-                <button type="button">Like</button>
+          <div id = "post_content">
+            <div id = "image_container" >
+              <img class = "object-fit-cover" src="{{$timeline->image}}" id = "img_post_style" alt="">
             </div>
 
-            <div class="Comment">
-                <button type="button">Comment</button>
+            <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->
+
+            <!--<div class="interaction">
+              <div class="like">
+                  <button type="button">Like</button>
+              </div>
+
+              <div class="Comment">
+                  <button type="button">Comment</button>
+              </div>
             </div>-->
           </div>
-        </div>
       </div>
-      
-    
+ 
     </div>
+    @endforeach   
+
     <script src="/assets/js/Profile.js"></script>
     <script src="/assets/js/ProfileUpdatePopUp.js"></script>
 

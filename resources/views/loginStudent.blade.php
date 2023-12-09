@@ -45,6 +45,9 @@
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
 
+                        <input type="hidden" name="ProfilePicture" id="ProfilePicture" value="/storage/public/profiles//1701528688NewJeans-Hanni.png.png">
+                       
+
                         <div class="mb-3">
                             <input type="text" class="form__field" name="email" id='email' required />
                             <label for="email" class="form__label">StudentID</label>

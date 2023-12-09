@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-
+        Schema::table('lost_item', function (Blueprint $table) {
+            $table->renameColumn('add_information','additional');
+        });
     }
 
     /**
@@ -19,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('lost_item', function (Blueprint $table) {
+            $table->renameColumn('additional','add_information');
+        });
     }
 };
