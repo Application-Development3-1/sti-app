@@ -38,7 +38,7 @@
                     <form action="{{ route('login2') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <input type="text" name="email2" class="form__field" id="email2" required>
+                            <input type="text" name="email2" class="form__field" id="email2" maxlength="3" required>
                             <label for="email2" class="form__label">Email</label>
                         </div>
                         <div class="mb-3">

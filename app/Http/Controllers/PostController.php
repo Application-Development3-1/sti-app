@@ -45,24 +45,27 @@ class PostController extends Controller{
     }
 
 
-    public function index(){
+    public function index(Request $request){
 
         $idarray = Post::all()->modelKeys();
         $idmax= end($idarray);
         $post = Post::all();
+        
+        
 
         $reverse= $post->reverse();
         $reverse->all();
 
-        $user_id=Auth::user()->id;
+        $users = Auth::user()->id;
         
-        $profiles = Profile::where('user_id', $user_id)->latest()->first();
+        $profiles = Profile::where('user_id', $users)->latest()->first();
 
         
         
        return view('studentHomePage', ['post'=>$reverse], ['profiles'=>$profiles]);
    
     }
+  
 
 
     public function store(Request $request){

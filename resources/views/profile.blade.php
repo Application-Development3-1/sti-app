@@ -31,11 +31,11 @@
     <div class ="rectangle">
       @php($x=Auth::user()->id)
       <div class="image-cropper">
-        <img  src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-pic"></img>
+        <img  src="{{$profiles->ProfilePicture ??'storage/public/profiles/default.png'}}" class="profile-pic"></img>
         </div>
 
             <div id = "id_text_style">{{Auth::user()->first_name}} {{Auth::user()->last_name}} </div>
-            <div id = "id_text_style_2">{{Auth::user()->course}}</div>
+            <div id = "id_text_style_2" >{{Auth::user()->course}}</div>
     </div>
 
   
@@ -67,18 +67,18 @@
    
     <div class = "change_pass_rectangle">
         <button type = "button"  id = "change_password_style">
-            <a>Edit Information</a>
+            <a href="/userSettings">Edit Information</a>
         </button>
     </div>
 
     <div id = "posts_style">POSTS</div>
-    @foreach($timeline as $timeline)
     <div class = "row-col-auto" id = "post_area">
-      
+    @foreach($timeline as $timeline)
+    
       <div class = "col" id = "member_post">
 
         <div class="image-cropper-2">
-          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
+          <img src="{{$profiles->ProfilePicture  ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
         </div> 
 
         <div id = "post_text">

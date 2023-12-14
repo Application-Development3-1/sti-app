@@ -49,7 +49,7 @@
                        
 
                         <div class="mb-3">
-                            <input type="text" class="form__field" name="email" id='email' required />
+                            <input type="text" class="form__field" name="email" id="email" onkeypress="return numberOnly(event)" maxlength="11" required />
                             <label for="email" class="form__label">StudentID</label>
                         </div>
                        
@@ -77,6 +77,10 @@
     </div>
 
 </div>
+
+
+<script src="/assets/js/inputValidation.js"></script>
+
 </body>
 
 </html>

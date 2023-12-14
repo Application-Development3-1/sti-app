@@ -27,7 +27,7 @@
 
                 <div class="user-details">
                     <div class="input-group">
-                        <input name ="studentNum" type="text" required>
+                        <input name ="studentNum" type="text" onkeypress="return numberOnly(event)" maxlength="11" required>
                         <label class="labellineStudNum">Student No.</label>
                     </div>
                     
@@ -43,18 +43,18 @@
                         <option value="BSAIS" id="Bsais">BSAIS (Bachelor of Science in Accounting Information System)</option>
                     </select>
                     <div class="input-group">
-                        <input name="firstName" type="text" required>
+                        <input name="firstName" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label  class="labellineFname">First Name</label>
                        
                     </div>
 
                     <div class="input-group">
-                        <input name="lastName" type="text" required>
+                        <input name="lastName" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label class="labellineLname">Last Name</label>
                     </div>
 
                     <div class="input-group">
-                        <input name="middleName" type="text" required>
+                        <input name="middleName" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label class="labellineMname">Middle Name</label>
                     </div>
 
@@ -96,6 +96,7 @@
 
     <script src="{{asset('assets/js/_studentsRegistration.js') }}"></script>
     <script src="/assets/js/storeData.js"></script>
+    <script src="/assets/js/inputValidation.js"></script>
    
 
 </body>

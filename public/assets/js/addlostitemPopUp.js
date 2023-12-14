@@ -48,3 +48,27 @@ function postingFunction(){
     reader.readerAsDataURL(imagefile.files[0]);
 });
 }
+
+
+/*
+function confirmation(ev){
+  ev.preventDefault();
+  var urlToRedirect = ev.currentTraget.getAttribute('href');
+  console.log(urlToRedirect);
+  swal({
+
+    title:"Are you sure to delete this?",
+    text:"You won't be able to revert this delete",
+    icon:"warning",
+    buttons:true,
+    dangerMode: true, 
+
+  })
+
+  .then((willCancel)=>{
+    if(willCancel){
+      window.location.href=urlToRedirect;
+    }
+    
+  });
+}*/

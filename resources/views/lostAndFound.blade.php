@@ -93,23 +93,22 @@
     </div>
 
         @foreach($lost as $lost )
-
-
-        <div class="logout-popup" id="logoutForm">
+<!--
+        <div class="logout-popup" id="logoutForm" >
           <form action="/lost_delete/{{ $lost->id }}" class="logout-container" method="get">
             <h1>Are you sure you want to delete this post?</h1>
             <button type="submit" class="btn_yes" id="Posting_yes" >Yes<a href="/lost_delete/{{ $lost->id }}"></a></button>
             <button type="button" class="btn cancel" id="Close_cancel" value="reset" onclick="cancelDelete()">Close</button>
           </form>
         </div>
+-->
 
-        
         <div class = "col" id = "post_container">
           <div class = "image-cropper">
             <img src="images/Ditto.png" class="prof-pic">
           </div>
 
-          <i class="fa-solid fa-ellipsis" id="delete" onclick="yesDelete()"></i>          
+          <a href="/lost_delete/{{ $lost->id }}" class="fa-solid fa-ellipsis" id="delete" onclick="return confirm('Are you sure you want to delete this?')"></a>         
 
           <div class="LostAndFoundPost">
             <p id="User-Name">  {{$lost->user->first_name}} {{$lost->user->last_name}}</p>
@@ -131,8 +130,7 @@
 
         @endforeach
 
-        <a href="#"><i class="fa-solid fa-circle-up" id="back_to_up" style="color: #014887; font-size: 36px; position: absolute; margin-left: 70%; margin-top: 35px; transform: translate(-50%, -50%);"></i></a>
     <!--<script src="/assets/js/addlostitem.js"></script>-->
-    <script src="/assets/js/addlostitemPopUp.js"></script>
+    <script src="/assets/js/addlostitemPopUp.js" type="text/javascript"></script>
   </body>
 </html>
