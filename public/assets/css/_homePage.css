@@ -308,12 +308,30 @@ html{
 
 
 .delete-container{
-  max-width: 500px;
+  max-width: 400px;
   height : 150px;
   padding: 30px;
   background-color: white;
   border-radius: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   box-shadow: 2px 2px 2px 2px #e3e3d7;
+  margin-top: 20%;
+  margin-left: 38%;
+
+  align-items: center;
+  justify-content: center;
+  display: fixed;
+
+  /*max-width: 500px;
+  height : 150px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px #e3e3d7;*/
   
 }
 
@@ -325,7 +343,7 @@ html{
 .delete-popup{
   display: none;
   position: absolute;
-  right: 1%;
+  right: 50%;
   border: transparent;
   z-index: 9;
 }

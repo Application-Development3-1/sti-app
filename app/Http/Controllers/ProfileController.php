@@ -22,6 +22,7 @@ class ProfileController extends Controller
 
         $user_id = Auth::user();
         $timeline = Post::all()->where('user_id', Auth::user()->id);
+        
 
         return view('profile', ['profiles'=>$profiles], compact('timeline'));
     }

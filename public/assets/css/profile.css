@@ -226,17 +226,18 @@ position: relative;
     border-radius: 20px;
     background-color : #014887;
     box-shadow: 0 4px 5px 0 #656565;
+    padding-top: 30px;
   }
 
   .image-cropper-2{
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
 
-    margin-left:80px ;
-    margin-top:60px ;
+    margin-left:70px;
+    margin-top:20px ;
     transform: translate(-50%, -50%);
   }
 
@@ -260,10 +261,9 @@ position: relative;
   
   #caption{
     color:#ffffff ;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 45px;
     font-size: 16px;
-    top: 10px;
     position: relative;
   }
   
@@ -296,7 +296,6 @@ position: relative;
     color: #ffffff;
     font-size: 24px;
     margin-left: 130px;
-    margin-top: 30px;
   }
 
   #course_post{

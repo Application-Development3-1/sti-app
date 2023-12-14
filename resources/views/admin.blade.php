@@ -101,27 +101,38 @@
 
                 <div class = "Admin">
                     <label for="adminId"><b>ID</b></label>
-                    <input  type="text" name="employeeID" class ="adminId" id="adminId">
+                    <input  type="text" name="employeeID" class ="adminId" id="adminId" onkeypress="return numberOnly(event)" maxlength="3">
                 </div>
 
                 <div class = "Admin">
                     <label for="adminFirstName"><b>First Name</b></label>
-                    <input type="text" name="FirstName"class="adminFirstName" id="adminFirstName">
+                    <input type="text" name="FirstName"class="adminFirstName" id="adminFirstName" onkeypress="return alphabetOnly(event)" required>
                 </div>
                 
                 <div class = "Admin">
                     <label for="adminLastName"><b>Last Name</b></label>
-                    <input type="text" name="LastName"class="adminLastName" id="adminLastName">
+                    <input type="text" name="LastName"class="adminLastName" id="adminLastName" onkeypress="return alphabetOnly(event)" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminMiddleName"><b>Middle Name</b></label>
-                    <input type="text" name="MiddleName"class="adminMiddleName" id="adminMiddleName">
+                    <input type="text" name="MiddleName"class="adminMiddleName" id="adminMiddleName" onkeypress="return alphabetOnly(event)" >
                 </div>
 
                 <div class = "Admin">
                     <label for="adminCourse"><b>Department</b></label>
-                    <input type="text" name="Course"class="adminCourse" id="adminCourse">
+                    <select type="text" name="Course"class="adminCourse" id="adminCourse">
+                        <option value="Default">Department</option>
+                        <option value="ITD" id="itdep">Information Technology Department</option>
+                        <option value="BMD" id="bmdep">Business Management Department</option>
+                        <option value="CED" id="comendep">Computer Engineering Department</option>
+                        <option value="MAD" id="mulartdep">Multimedia Arts Department</option>
+                        <option value="TD" id="tourdep">Tourism Department</option>
+                        <option value="ICTD" id="ictdep">ICT/CS Department</option>
+                        <option value="AD" id="accdep">Accountant Department</option>
+                        <option value="ARD" id="assregdep">Associated Registrar Department</option>
+                    </select>
+
                 </div>
 
                 <div class = "Admin">
@@ -158,32 +169,42 @@
 
                 <div class = "Admin">
                     <label for="adminId"><b>Student ID</b></label>
-                    <input  type="text" name="studentID" class ="adminId" id="adminId">
+                    <input  type="text" name="studentID" class ="adminId" id="adminId" onkeypress="return numberOnly(event)"  maxlength="11" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminFirstName"><b>First Name</b></label>
-                    <input type="text" name="FirstName"class="adminFirstName" id="adminFirstName">
+                    <input type="text" name="FirstName"class="adminFirstName" id="adminFirstName" onkeypress="return alphabetOnly(event)" required>
                 </div>
                 
                 <div class = "Admin">
                     <label for="adminLastName"><b>Last Name</b></label>
-                    <input type="text" name="LastName"class="adminLastName" id="adminLastName">
+                    <input type="text" name="LastName"class="adminLastName" id="adminLastName" onkeypress="return alphabetOnly(event)" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminMiddleName"><b>Middle Name</b></label>
-                    <input type="text" name="MiddleName"class="adminMiddleName" id="adminMiddleName">
+                    <input type="text" name="MiddleName"class="adminMiddleName" id="adminMiddleName" onkeypress="return alphabetOnly(event)">
                 </div>
 
                 <div class = "Admin">
                     <label for="adminCourse"><b>Course</b></label>
-                    <input type="text" name="Course"class="adminCourse" id="adminCourse">
+                    <select type="text" name="Course"class="adminCourse" id="adminCourse" required>
+                    <option value="Default">Course</option>
+                        <option value="BSIT" id="Bsit">BSIT (Bachelor of Science in Information Technology)</option>
+                        <option value="BSHM" id="Bshm">BSHM (Bachelor of Science in Hospitality Management)</option>
+                        <option value="BSBA" id="Bsba">BSBA (Bachelor of Science in Business Administration)</option>
+                        <option value="BMMA" id="Bmma">BMMA (Bachelor of Multimedia Arts)</option>
+                        <option value="BSTM" id="Bstm">BSTM (Bachelor of Science in Tourism Management)</option>
+                        <option value="BSCS" id="Bscs">BSCS (Bachelor of Science in Computer Science)</option>
+                        <option value="BACOMM" id="Bacomm">BACOMM (Bachelor of Arts in Communication)</option>
+                        <option value="BSAIS" id="Bsais">BSAIS (Bachelor of Science in Accounting Information System)</option>
+                    </select>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminEmail"><b>Email</b></label>
-                    <input type="text" name="Email"class="adminEmail" id="adminEmail">
+                    <input type="text" name="Email"class="adminEmail" id="adminEmail" required>
                 </div>
 
                 <div class = "Admin">
@@ -217,5 +238,6 @@
             </div>
 
     <script src="/assets/js/passwordGenerator.js"></script>
+    <script src="/assets/js/inputValidation.js"></script>
   </body>
 </html>

@@ -23,7 +23,7 @@
             @csrf
                 <div class="user-details">
                     <div class="input-group">
-                        <input name="employeeID" type="number" required>
+                        <input name="employeeID" type="text" onkeypress="return numberOnly(event)" maxlength="3" required>
                         <label class="labellineEmployeeID">Employee ID</label>
                     </div>
                     
@@ -40,22 +40,22 @@
                     </select>
 
                     <div class="input-group">
-                        <input name="first_name" type="text" required>
+                        <input name="first_name" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label class="labellineFname">First Name</label>
                     </div>
 
                     <div class="input-group">
-                        <input name="last_name" type="text" required>
+                        <input name="last_name" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label class="labellineLname">Last Name</label>
                     </div>
 
                     <div class="input-group">
-                        <input name="middle_name" type="text" required>
+                        <input name="middle_name" type="text" onkeypress="return alphabetOnly(event)" required>
                         <label class="labellineMname">Middle Name</label>
                     </div>
 
                     <div class="input-group">
-                        <input name="contact" type="text" required>
+                        <input name="contact" type="text" onkeypress="return numberOnly(event)" maxlength="11" required>
                         <label class="labellineContact">Contact No.</label>
                     </div>
 
@@ -99,5 +99,6 @@
 
     <script src="/assets/js/_teacherRegistration.js"></script>
     <script src="/assets/js/storeDataTeachers.js"></script>
+    <script src="/assets/js/inputValidation.js"></script>
 </body>
 </html>

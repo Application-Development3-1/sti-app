@@ -54,7 +54,7 @@
 
         <a href="/profile"> 
           <div class="image-cropper">
-            <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-image">
+            <img src="{{ $profiles->ProfilePicture ?? 'storage/public/profiles/default.png' }}" class="profile-image">
           </div>
         </a>
 
@@ -80,9 +80,10 @@
       <!--CREATING POST-->
       
       <div class = "col-sm-1" id="postbox" >
+        
       <a href="/profile"> 
           <div class="image-cropper-2">
-            <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-image-2">
+            <img src="{{  $profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-image-2">
           </div>
         </a>
         <input type="text" name="post"id="add_post" placeholder= "Write Something...." onclick="openForm()">
@@ -125,7 +126,10 @@
 
     </div>
 
-    @foreach($post as $post )
+    @foreach($post as $post)
+      
+
+   
     <div class = "row row-cols-auto" style="margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
       <div class = "col" ></div>
 
@@ -139,13 +143,19 @@
 
 
 <!--POOOOOOOOSSSSSSSSTTTT-->
+  
+      
+
       <div class = "col" id = "member_post">
         <div class="image-cropper-3">
-          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="post-profile" alt="">       
+          <img src="{{  'storage/public/profiles/default.png'}}" class="post-profile" alt="">       
         </div>
+
+  
+   
         
       <!--delete button-->  
-      <i class="fa-solid fa-ellipsis" onclick="openDelete()" id="del_btn"></i>
+      <a class = "fa-solid fa-ellipsis" id="del_btn" onclick="openDelete()"></a>
 
         <div id = "post_text">
           {{$post->user->first_name}} {{$post->user->last_name}} 
@@ -186,7 +196,9 @@
       </div>
 
     </div>
+   
     @endforeach
+    
   </div>
   
   <!--<script scr ="/assets/js/storeDataStudentPost.js"></script>-->
