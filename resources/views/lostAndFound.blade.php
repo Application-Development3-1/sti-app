@@ -67,12 +67,12 @@
                   <img src="" alt="imageLost&Found" id="pictureInput">
                 </div>
 
-                <div class="row justify-content-center"> 
-                  <label class="AddPicButton" for="kuha-picture" id="AddPicButton"><i class="fa-regular fa-image" style="color: white; padding-right: 15px;"></i>Add image here</label>
-
-                  <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}">
-                  <input class="addimage" type="file" accept="image/jpeg, image/png, image/jpg" name="image" id="kuha-picture">
-                        
+                <div class="row justify-content-center">
+                  <div class="kaka">
+                    <label class="AddPicbutton" for="kuha-picture" id="AddPicButton"><i class="fa-regular fa-image" style="color: white; padding-right: 15px;"></i>Add image here</label>
+                    <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}">
+                    <input class="addimage" type="file" accept="image/jpeg, image/png, image/jpg" name="image" id="kuha-picture"> 
+                  </div>
                 </div>
                     
                 <div class="row justify-content-center"> 
@@ -93,7 +93,7 @@
     </div>
 
         @foreach($lost as $lost )
-<!--
+
         <div class="logout-popup" id="logoutForm" >
           <form action="/lost_delete/{{ $lost->id }}" class="logout-container" method="get">
             <h1>Are you sure you want to delete this post?</h1>
@@ -101,17 +101,18 @@
             <button type="button" class="btn cancel" id="Close_cancel" value="reset" onclick="cancelDelete()">Close</button>
           </form>
         </div>
--->
+
 
         <div class = "col" id = "post_container">
           <div class = "image-cropper">
-            <img src="images/Ditto.png" class="prof-pic">
+            <img src=" {{$profiles->ProfilePicture}}" class="prof-pic">
           </div>
 
-          <a href="/lost_delete/{{ $lost->id }}" class="fa-solid fa-ellipsis" id="delete" onclick="return confirm('Are you sure you want to delete this?')"></a>         
+          <a class="fa-solid fa-ellipsis" id="delete" onclick="yesDelete()"></a>         
 
           <div class="LostAndFoundPost">
             <p id="User-Name">  {{$lost->user->first_name}} {{$lost->user->last_name}}</p>
+            <p class="Post-Caption" id="time">{{date('D', strtotime($lost->created_at))}}</p>
             <p class="Post-Caption" id="what">What: {{$lost->what}}</p>
             <p class="Post-Caption" id="when">When: {{$lost->when}}</p>
             <p class="Post-Caption" id="where">Where: {{$lost->where}}</p>

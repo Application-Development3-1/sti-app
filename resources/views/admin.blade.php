@@ -169,27 +169,27 @@
 
                 <div class = "Admin">
                     <label for="adminId"><b>Student ID</b></label>
-                    <input  type="text" name="studentID" class ="adminId" id="adminId" onkeypress="return numberOnly(event)"  maxlength="11" required>
+                    <input  type="text" name="studentID" class ="studentId" id="adminId" onkeypress="return numberOnly(event)"  maxlength="11" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminFirstName"><b>First Name</b></label>
-                    <input type="text" name="FirstName"class="adminFirstName" id="adminFirstName" onkeypress="return alphabetOnly(event)" required>
+                    <input type="text" name="FirstName"class="studentFirstName" id="adminFirstName" onkeypress="return alphabetOnly(event)" required>
                 </div>
                 
                 <div class = "Admin">
                     <label for="adminLastName"><b>Last Name</b></label>
-                    <input type="text" name="LastName"class="adminLastName" id="adminLastName" onkeypress="return alphabetOnly(event)" required>
+                    <input type="text" name="LastName"class="studentLastName" id="adminLastName" onkeypress="return alphabetOnly(event)" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminMiddleName"><b>Middle Name</b></label>
-                    <input type="text" name="MiddleName"class="adminMiddleName" id="adminMiddleName" onkeypress="return alphabetOnly(event)">
+                    <input type="text" name="MiddleName"class="studentMiddleName" id="adminMiddleName" onkeypress="return alphabetOnly(event)">
                 </div>
 
                 <div class = "Admin">
                     <label for="adminCourse"><b>Course</b></label>
-                    <select type="text" name="Course"class="adminCourse" id="adminCourse" required>
+                    <select type="text" name="Course"class="studentCourse" id="adminCourse" required>
                     <option value="Default">Course</option>
                         <option value="BSIT" id="Bsit">BSIT (Bachelor of Science in Information Technology)</option>
                         <option value="BSHM" id="Bshm">BSHM (Bachelor of Science in Hospitality Management)</option>
@@ -204,12 +204,12 @@
 
                 <div class = "Admin">
                     <label for="adminEmail"><b>Email</b></label>
-                    <input type="text" name="Email"class="adminEmail" id="adminEmail" required>
+                    <input type="text" name="Email"class="studentEmail" id="adminEmail" required>
                 </div>
 
                 <div class = "Admin">
                     <label for="adminPassword"><b>Password</b></label>
-                    <input type="text" name="Password"class="adminPassword" id="studentPassword">
+                    <input type="text" name="Password"class="studentPassword" id="studentPassword">
                     
                     <div class="generate">
                         <button onclick="createPassword()" type="button" class="btn btn-primary generate-password" id="generatePassword">Generate</button>

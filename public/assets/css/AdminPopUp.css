@@ -31,30 +31,24 @@
   #adminForm {
     display: none;
     position: fixed;
-    
     border: transparent;
     z-index: 9;
     position: absolute;
-
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
-    
     width: 700px;
   }
 
   #adminTeacherForm {
     display: none;
-    position: fixed;
-    
+    position: fixed; 
     border: transparent;
     z-index: 9;
     position: absolute;
-
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
-    
     width: 700px;
   }
   
@@ -168,6 +162,12 @@
   .adminId{
     width: 450px;
     height: 30px;
+    margin-left: 105px;
+    margin-bottom: 10px;
+  }
+  .studentId{
+    width: 450px;
+    height: 30px;
     margin-left: 40px;
     margin-bottom: 10px;
   }
@@ -178,7 +178,19 @@
     margin-left: 40px;
     margin-bottom: 10px;
   }
+  .studentFirstName{
+    width: 450px;
+    height: 30px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
   .adminLastName{
+    width: 450px;
+    height: 30px;
+    margin-left: 43px;
+    margin-bottom: 10px;
+  }
+  .studentLastName{
     width: 450px;
     height: 30px;
     margin-left: 43px;
@@ -191,8 +203,20 @@
     margin-left: 20px;
     margin-bottom: 10px;
   }
+  .studentMiddleName{
+    width: 450px;
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
 
   .adminCourse{
+    width: 450px;
+    height: 30px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+  .studentCourse{
     width: 450px;
     height: 30px;
     margin-left: 70px;
@@ -205,8 +229,21 @@
     margin-left: 80px;
     margin-bottom: 10px;
   }
+  .studentEmail{
+    width: 450px;
+    height: 30px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+  }
 
   .adminPassword{
+    width: 250px;
+    height: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+  }
+  .studentPassword{
     width: 250px;
     height: 30px;
     margin-left: 50px;

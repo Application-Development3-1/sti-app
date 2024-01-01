@@ -90,11 +90,10 @@ label{
     display: none;
 }
 
-.AddPicButton {
-    width: 270px;
+.AddPicbutton {
+    width: 100%;
     margin-top: 10%;
 }
-
 
 #butpost{
     margin-top: 10px;
@@ -129,31 +128,23 @@ label{
     
 }
 
-
-
 #openEllipsis{
-
     display: none;
     position: fixed;
-    
     border: transparent;
     z-index: 9;
     position: absolute;
-
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
-    
     width: 700px;
-    
 }
 
 .delete_cont{
     width: 400px;
     height: 200px;
     background: white;
-    border-radius: 10px;
-    
+    border-radius: 10px; 
 }
 
 #Cancel{

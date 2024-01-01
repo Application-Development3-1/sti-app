@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\Api\v1\UsersController;
 use App\Http\Controllers\Api\v2\TeachersController;
-use App\Http\Controllers\HomeController;
+
 use Illuminate\Support\Facades\Route;
-use Illuminate\Auth\Events\Login;
-use Illuminate\Http\Request;
+
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeTestController;
 use App\Http\Controllers\AuthControllerTeacher;
@@ -13,16 +12,15 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\HomeTestControllerTeacher;
 use App\Http\Controllers\LostItemController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostControllerTeacher;
 
-use App\Http\Controllers\SampleFeedController;
-use App\Http\Controllers\ProductController;
+
 use App\Http\Controllers\ProfileController;
-use App\Models\Feed;
+
 use App\Models\LostItem;
 use App\Models\Post;
 use App\Models\Profile;
-use App\Models\User;
-use GuzzleHttp\Middleware;
+
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Event\Code\Test;
 
@@ -199,6 +197,35 @@ Route::get('/registrationStudent', function(){
 
     Route::get('/userSettings', [ChangePasswordController::class, 'index']);
     Route::post('/userSettings', [ChangePasswordController::class, 'changePassword']);
+
+    Route::get('teachersHomePage', function(){
+        return view('teachersHomePage');
+    });
+
+    Route::get('/profileTeacher', function () {
+
+        return view('profileTeacher');
+    });
+
+    Route::POST('teachersHomePage', [PostControllerTeacher::class, 'teachersHomePage']);
+
+    Route::get('/teachersHomePage', function(){
+        $post = DB::table('post')->get();
+        
+        return view ('teachersHomePage');
+    });
+
+    Route::post('/teachersHomePage', function(){
+        $post = new Post();
+        $post->image = request('image');
+        $post->caption = request('caption');
+    });
+
+    Route::get('/post_delete/{id}', [PostControllerTeacher::class, 'deleteTeachPost']);
+
+    Route::resource('/teachersHomePage', PostControllerTeacher::class);
+
+    Route::post('homeTeacher', [PostControllerTeacher::class, 'store']);
 
  
     

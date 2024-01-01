@@ -21,8 +21,8 @@ class AuthControllerTeacher extends Controller
             'password' => $request->password2,
         ];
  
-        if (Auth::guard('webteacher')->attempt($credetials)) {
-            return redirect('/studentHomePage')->with('success', 'Login Success');
+        if (Auth::guard('teacher')->attempt($credetials)) {
+            return redirect('/teachersHomePage')->with('success', 'Login Success');
         }
  
         return back()->with('error', 'Invalid Email or Password!');
@@ -30,10 +30,9 @@ class AuthControllerTeacher extends Controller
  
     public function logoutTeacher()
     {
-        Auth::logout1();
+        Auth::guard('teacher')->logout();
  
-        return redirect()->route('loginTeacher');
+        return redirect('/loginTeacher');
     }
-
     
 }

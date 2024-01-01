@@ -55,7 +55,6 @@
     cursor: pointer;
     transform: translate(-50%, -50%);
     filter: drop-shadow(2px 3px 1px #0000005a);
-    
   }
    
    #post_outer_container{
@@ -97,15 +96,12 @@
      margin-top: 60px; 
      transform: translate(-50%, -50%);
    }
-
-
-
   
    #post_content_container{
      background-color:#F6F6EF ;
      height: 320px;
      width: 570px;
-     margin-top: 8%;
+     margin-top: 4%;
      margin-left: 65px;
      border-radius: 20px;
    }
@@ -139,20 +135,28 @@
   }
 
   #User-Name{
+    font-size: 20px;
+    color: #F6F6EF;
+    font-weight: bold;
+    margin-left: 120px;
+    top: 30px;
+    position: relative;
+  }
+
+  #time{
     font-size: 14px;
     color: #F6F6EF;
     font-weight: bold;
     margin-left: 120px;
-    top: 60px;
+    top: 20px;
     position: relative;
   }
-
 
   #what{
     font-size: 16px;
     color: #F6F6EF;
     margin-left: 9.5%;
-    top: 80px;
+    top: 50px;
     position: relative;
     font-weight: bold;
   }
@@ -160,7 +164,7 @@
     font-size: 16px;
     color: #F6F6EF;
     margin-left: 9.5%;
-    top: 65px;
+    top: 35px;
     position: relative;
     font-weight: bold;
   }
@@ -169,7 +173,7 @@
     font-size: 16px;
     color: #F6F6EF;
     margin-left: 9.5%;
-    top: 50px;
+    top: 20px;
     position: relative;
     font-weight: bold;
   }
@@ -178,7 +182,7 @@
     font-size: 16px;
     color: #F6F6EF;
     margin-left: 9.5%;
-    top: 35px;
+    top: 5px;
     position: relative;
     font-weight: bold;
   }
@@ -188,7 +192,6 @@
     height: 50px;
     margin-top: 10% ;
     margin-left: 15%;
-
     border-radius: 10px;
   }
 
@@ -198,9 +201,8 @@
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
-
     margin-left:75px ;
-    margin-top:80px ;
+    margin-top:60px ;
     transform: translate(-50%, -50%);
     filter: drop-shadow(2px 3px 1px #0000005a);
   }
@@ -214,9 +216,8 @@
 
   #delete{
     color: white;
+    cursor: pointer;
   }
-
-
 
 
   /*DELETE POP UP SA LOST AND FOUND*/
@@ -229,20 +230,32 @@
 /* The popup form - hidden by default */
 .logout-popup {
   display: none;
-  right: 1%;
+  position: absolute;
+  right: 50%;
   border: transparent;
   z-index: 9;
 }
 
 /* Add styles to the form container */
 .logout-container {
-  max-width: 500px;
+  max-width: 480px;
   height : 150px;
   padding: 30px;
   background-color: white;
   border-radius: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   box-shadow: 2px 2px 2px 2px #e3e3d7;
-  
+  margin-top: 20%;
+  margin-left: 38%;
+
+  align-items: center;
+  justify-content: center;
+  display: fixed;
+
 }
 
 
@@ -251,7 +264,6 @@
 #Posting_yes{
   background-color: #008FEF;
   color: white;
-
   padding: 16px 80px;
   opacity: 0.8;
   Border: none;
@@ -262,12 +274,10 @@
 #Close_cancel{
   background-color: red;
   color:white;
-
   padding: 16px 80px ;
   opacity: 0.8;
   border: none;
   border-radius: 10px;
-
 }
 
 

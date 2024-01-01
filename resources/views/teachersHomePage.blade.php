@@ -52,7 +52,7 @@
         <div id = "prof">
         </div>
 
-        <a href="/profile"> 
+        <a href="/profileTeacher"> 
           <div class="image-cropper">
             <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-image">
           </div>
@@ -65,9 +65,13 @@
           
           <div id="left_text_style" >
             <ul>
-              <li style="font-size: large;"><a href="/profile">
-                </a>
-              </li>
+           
+              
+              <li style="font-size: large;"><a href="/profileTeacher">{{\Auth::guard('teacher')->user()->first_name}}{{\Auth::guard('teacher')->user()->last_name}} <br>
+              
+              {{\Auth::guard('teacher')->user()->department}}</a></li>
+            
+
               <li class="side__nav"><a href="/yourGroup">Your Group</a></li>
               <li class="side__nav"><a href="/">Calendar</a></li>
               <li class="side__nav"><a href="/lostAndFound">Lost and Found</a></li>
@@ -80,7 +84,7 @@
       <!--CREATING POST-->
       
       <div class = "col-sm-1" id="postbox" >
-      <a href="/profile"> 
+      <a href="/profileTeacher"> 
           <div class="image-cropper-2">
             <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-image-2">
           </div>
@@ -95,11 +99,11 @@
       <!--POP-UP SELECT IMAGE-->
 
       <div class="form-popup" id="myForm" method="post">
-        <form action="homeStudent" class="form-container" method="POST" enctype="multipart/form-data">
+        <form action="homeTeacher" class="form-container" method="POST" enctype="multipart/form-data">
           @csrf
           <h1>Add Post</h1>
 
-          <input type="hidden" value="" name="user_id">
+          <input type="hidden" value="{{\Auth::guard('teacher')->user()->id}}" name="teacher_id">
           <input type="text" name="caption"id="add_post1" placeholder= "Write Something....">
           <input type="file" name="image" class="imageSelector" id="file" accept="image/jpeg, image/png, image/jpg">
 
@@ -125,9 +129,9 @@
 
     </div>
 
-    
-    <div class = "row row-cols-auto" style="margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
-      <div class = "col" ></div>
+     @foreach($post as $post )
+    <div class = "row row-cols-auto" style="margin-left:42px; margin-bottom:10px; width: 100%; height:100%; background-color: #F6F6EF;"id="rowlength" >
+      <div class = "col"></div>
 
       <div class="delete-popup" id="deleteForm">
         <form action="" class="delete-container" method="get">
@@ -141,27 +145,27 @@
 <!--POOOOOOOOSSSSSSSSTTTT-->
       <div class = "col" id = "member_post">
         <div class="image-cropper-3">
-          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="post-profile" alt="">       
+          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="post-profile" alt="">    
         </div>
         
       <!--delete button-->  
       <i class="fa-solid fa-ellipsis" onclick="openDelete()" id="del_btn"></i>
 
         <div id = "post_text">
-          
+          {{$post->user->first_name ?? $post->teacher->first_name}} {{$post->user->last_name ?? $post->teacher->last_name}} 
         </div>
 
         <div id = "course_post" style="font-size: 10px;">
-          
+           {{$post->created_at}}
         </div>
 
         <div>
-          <p id = "caption" name="caption"></p>
+          <p id = "caption" name="caption"> {{$post->caption}} </p>
         </div>
       
         <div id = "post_content">
           <div id = "image_container" >
-            <img src="" style = "width: 100%;border-radius: 20px; height:100%" alt="">
+            <img src="{{$post->image}}" style = "width: 100%;border-radius: 20px; height:100%" alt="">
           </div>
 
           <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->
@@ -186,7 +190,7 @@
       </div>
 
     </div>
-    
+     @endforeach
   </div>
   
   <!--<script scr ="/assets/js/storeDataStudentPost.js"></script>-->

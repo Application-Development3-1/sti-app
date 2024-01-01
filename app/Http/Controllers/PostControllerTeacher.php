@@ -8,15 +8,12 @@ use App\Models\Profile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
-
-
-class PostController extends Controller{
-
+class PostControllerTeacher extends Controller
+{
     public $num;
 
-    public function studentHomePage(Request $request){
+    public function teachersHomePage(Request $request){
        
         
         foreach($request->image as $value){
@@ -40,28 +37,31 @@ class PostController extends Controller{
 
         
 
-        return view ('studentHomePage', compact('data'));
+        return view ('teachersHomePage', compact('data'));
 
     }
 
 
     public function index(){
 
+        $idarray = Post::all()->modelKeys();
+        $idmax= end($idarray);
         $post = Post::all();
 
         $reverse= $post->reverse();
         $reverse->all();
         
-        $user_id=Auth::id();
+        $teacher_id=Auth::id();
+        
 
         
-        $profiles = Profile::where('user_id', $user_id)->latest()->first();
+        $profiles = Profile::where('teacher_id', $teacher_id)->latest()->first();
+
         
         
-       return view('studentHomePage', ['post'=>$reverse], ['profiles'=>$profiles]);
+       return view('teachersHomePage', ['post'=>$reverse], ['profiles'=>$profiles]);
    
     }
-  
 
 
     public function store(Request $request){
@@ -77,21 +77,19 @@ class PostController extends Controller{
 
         $path =$request->file('image')->storeAs('public/images/', $fileName, 'public');
 
-        $userId= $request->input('user_id');
+        $teacherId = $request->input('teacher_id');
 
         $requestData["image"] = '/storage/'.$path;
         
-        Post::create($requestData, $userId);
+        Post::create($requestData, $teacherId);
          
 
-        return redirect('studentHomePage')->with('message','Post Success!');
+        return redirect('teachersHomePage')->with('message','post success!');
     }
 
-    public function deleteStudPost($id){
+    public function deleteTeachPost($id){
         DB::delete('delete from post where id =?', [$id]);
-        return redirect('studentHomePage')->with('success', 'Data Deleted');
+        return redirect('teachersHomePage')->with('success', 'Data Deleted');
 
     }
-    
 }
-

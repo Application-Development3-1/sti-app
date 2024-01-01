@@ -16,15 +16,12 @@ class ProfileController extends Controller
 
     public function index(){
 
-        $user_id=Auth::user()->id;
+       
+        $user_id=Auth::id();
 
         $profiles = Profile::where('user_id', $user_id)->latest()->first();
 
-        $user_id = Auth::user();
-        $timeline = Post::all()->where('user_id', Auth::user()->id);
-        
-
-        return view('profile', ['profiles'=>$profiles], compact('timeline'));
+        return view('profile', ['profiles'=>$profiles]);
     }
 
     public function profile(Request $request){

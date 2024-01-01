@@ -40,8 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'webteacher'=> [
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
+
+        'teacher'=> [
             'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+
+        'teacher-api' => [
+            'driver' => 'token',
             'provider' => 'teachers',
         ],
     ],
