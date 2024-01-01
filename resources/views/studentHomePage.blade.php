@@ -65,8 +65,8 @@
           
           <div id="left_text_style" >
             <ul>
-              <li style="font-size: large;"><a href="/profile"> {{Auth::user()->first_name}} {{Auth::user()->last_name}} 
-                {{Auth::user()->course}}</a>
+              <li style="font-size: large;"><a href="/profile"> {{Auth::user()->first_name}} {{Auth::user()->last_name}} </a><br>
+                {{Auth::user()->course}}
               </li>
               <li class="side__nav"><a href="/yourGroup">Your Group</a></li>
               <li class="side__nav"><a href="/">Calendar</a></li>
@@ -148,12 +148,10 @@
 
       <div class = "col" id = "member_post">
         <div class="image-cropper-3">
-          <img src="{{  'storage/public/profiles/default.png'}}" class="post-profile" alt="">       
+          <img src="{{  $profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="post-profile" alt="">       
         </div>
 
-  
-   
-        
+
       <!--delete button-->  
       <a class = "fa-solid fa-ellipsis" id="del_btn" onclick="openDelete()"></a>
 
@@ -162,7 +160,7 @@
         </div>
 
         <div id = "course_post" style="font-size: 10px;">
-          {{$post->created_at}}
+          {{date('D', strtotime($post->created_at))}}
         </div>
 
         <div>

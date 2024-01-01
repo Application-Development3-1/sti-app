@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\LostItem;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -49,9 +50,11 @@ class LostItemController extends Controller
         $reverse= $lost->reverse();
         $reverse->all();
 
-        $user_id =Auth::user()->id;
+        $users = Auth::user()->id;
+        
+        $profiles = Profile::where('user_id', $users)->latest()->first();
 
-        return view('lostAndFound', ['lost'=>$reverse]);
+        return view('lostAndFound', ['lost'=>$reverse], ['profiles'=>$profiles]);
    
     }
 

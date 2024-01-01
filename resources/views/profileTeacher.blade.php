@@ -21,7 +21,7 @@
             <div class="nav_logo">
             <img id="logo_pic" src="images/stilogo.png" alt="logo"></img>
             <div id ="your_profile_style">YOUR PROFILE</div>
-            <a href="/studentHomePage"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="/teachersHomePage"><i class="fa fa-home" aria-hidden="true"></i></a>
             </div>
         </nav>
     </header>
@@ -29,25 +29,28 @@
     <!-- logo in nav-->
 
     <div class ="rectangle">
-      @php($x=Auth::user()->id)
+      @php($x=\Auth::guard('teacher')->user()->id)
       <div class="image-cropper">
-        <img  src="{{$profiles->ProfilePicture ??'storage/public/profiles/default.png'}}" class="profile-pic"></img>
+        <img  src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile-pic"></img>
         </div>
 
-            <div id = "id_text_style">{{Auth::user()->first_name}} {{Auth::user()->last_name}} </div>
-            <div id = "id_text_style_2" >{{Auth::user()->course}}</div>
+            <div id = "id_text_style">{{\Auth::guard('teacher')->user()->first_name}} {{\Auth::guard('teacher')->user()->last_name}} </div>
+            <div id = "id_text_style_2">{{\Auth::guard('teacher')->user()->department}}</div>
     </div>
 
+  
     <i class="bi bi-camera-fill" id="prof_pic_update" onclick="openForm()"></i>
     
+
     <!--POPUP profile update-->
     <div class="form-popup" id="myForm" method="post">
         <form action="profile" class="form-container" method="POST" enctype="multipart/form-data">
           @csrf
           <h1>Change Profile Picture</h1>
 
-          <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}">
+          <input type="hidden" id="user_id" name="user_id" value="{{\Auth::guard('teacher')->user()->id}}">
           <input type="file" name="image" class="imageSelector" id="file" accept="image/jpeg, image/png, image/jpg">
+
           
           <button type="submit" class="btn" id="Posting" value="Upload" >Post</button>
           <button type="button" class="btn cancel" id="Close" value="reset" onclick="closeForm()">Close</button>
@@ -62,39 +65,39 @@
     <div class = "line2"></div>
     <div id = "id_text_style_4"> Hello~! This is Hanni Pham~ You guys did not see anything, you only saw my beautiful face~. </div>
    
-      <div class = "change_pass_rectangle">
-        <button type = "button"  onclick="window.location.href = 'userSettings'"  id = "change_password_style">
+    <div class = "change_pass_rectangle">
+        <button type = "button" href ="/userSettings" id = "change_password_style">
             Edit Information
         </button>
     </div>
 
-
     <div id = "posts_style">POSTS</div>
-    <div class = "row-col-auto" id = "post_area">
-    @foreach($timeline as $timeline)
     
+    <div class = "row-col-auto" id = "post_area">
+    <!--removed for each timeline--> <!--Removed for now-->
       <div class = "col" id = "member_post">
 
         <div class="image-cropper-2">
-          <img src="{{$profiles->ProfilePicture  ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
+          <img src="{{$profiles->ProfilePicture ?? 'storage/public/profiles/default.png'}}" class="profile_pic_for_post_style"></img>    
         </div> 
 
         <div id = "post_text">
-          {{Auth::user()->first_name}} {{Auth::user()->last_name}} 
+          {{\Auth::guard('teacher')->user()->first_name}} {{\Auth::guard('teacher')->user()->last_name}}
         </div>
+
         <div id = "course_post">
-        {{date('D g:i A', strtotime($timeline->created_at))}}
+           Sample Text
         </div>
 
         <div>
           <p id = "caption" name="caption">
-            {{$timeline->caption}}
+          Sample Text
           </p>
         </div>
       
           <div id = "post_content">
             <div id = "image_container" >
-              <img class = "object-fit-cover" src="{{$timeline->image}}" id = "img_post_style" alt="">
+              <img class = "object-fit-cover" src="" id = "img_post_style" alt="">
             </div>
 
             <!-- Ito yung sa like at comment button sa baba ng post. hindi pa tapos-->
@@ -110,9 +113,9 @@
             </div>-->
           </div>
       </div>
- 
+      
+  <!--for Each Removed for now-->
     </div>
-    @endforeach   
 
     <script src="/assets/js/Profile.js"></script>
     <script src="/assets/js/ProfileUpdatePopUp.js"></script>
